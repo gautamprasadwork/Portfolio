@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gautam Prasad | Quantitative Finance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a2332;
+      --secondary: #2c3e50;
+      --accent: #0066cc;
+      --text-primary: #2c3e50;
+      --text-secondary: #6c757d;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --border: #e2e8f0;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    /* Header */
+    header {
+      background: var(--bg-primary);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+    }
+
+    .logo {
+      font-family: 'Crimson Text', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Bio Section Styling */
+    .bio-intro {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .hero {
+      padding: 4rem 0;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-family: 'Crimson Text', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .hero-content .subtitle {
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0056b3;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-secondary);
+      border-color: var(--accent);
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 280px;
+      height: 380px;
+      border-radius: 16px;
+      object-fit: cover;
+      object-position: center top;
+      border: 6px solid var(--bg-secondary);
+      box-shadow: var(--shadow);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Crimson Text', serif;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    /* Experience Timeline */
+    .experience-timeline {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .experience-item {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .experience-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .experience-header h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .company-period {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .company {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .period {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .experience-details ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .experience-details li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .experience-details li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .experience-details strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Skills Section - Simple Layout */
+    .skills-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-category:last-child {
+      border-bottom: none;
+    }
+
+    .skill-category h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+      min-width: 200px;
+      margin: 0;
+    }
+
+    .skill-list {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Education Section */
+    .education-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .education-item {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .education-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .education-header h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .university-period {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .university {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .edu-period {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .education-details {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), #0056b3);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+
+    .project-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .project-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .project-card:hover ul {
+      max-height: 200px;
+      opacity: 1;
+      margin-top: 0.75rem;
+    }
+
+    .project-card li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    .project-card li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover p {
+      opacity: 0.7;
+    }
+
+    .project-meta {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .contact h2 {
+      font-family: 'Crimson Text', serif;
+      font-size: 2.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      padding: 0.75rem 1.25rem;
+      background: var(--bg-primary);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+    }
+
+    .contact-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem 0;
+      }
+
+      .hero-content h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero-image img {
+        width: 220px;
+        height: 300px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .company-period, .university-period {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .skill-category {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .skill-category h3 {
+        min-width: auto;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      .header-content {
+        padding: 1rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.875rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .project-card {
+        padding: 1.5rem;
+      }
+
+      .contact {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <a href="#hero" class="logo">Gautam Prasad</a>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="qf.pdf" target="_blank">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Gautam Prasad</h1>
+      <p class="subtitle">Final Year Quantitative Finance student, UEP Poznań </p>
+      <p class="bio-intro">Quantitative Finance professional with 2+ years of hands-on experience in equity research and portfolio management. Currently pursuing Master's in Quantitative Finance with expertise in derivatives pricing, risk modeling, and algorithmic trading.</p>
+      <div class="cta-buttons">
+        <a href="#experience" class="btn btn-primary">View Experience</a>
+        <a href="qf.pdf" target="_blank" class="btn btn-secondary">Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="IMG20230415182331.jpg" alt="Gautam Prasad - Professional Photo">
+    </div>
+  </section>
+
+  <!-- Professional Experience Section -->
+  <section id="experience">
+    <div class="section-header">
+      <h2>Professional Experience</h2>
+    </div>
+    
+    <div class="experience-timeline">
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Junior Financial Data Analyst</h3>
+          <div class="company-period">
+            <span class="company">Stockedge Advisory</span>
+            <span class="period">Jun 2024 – Sep 2024</span>
+          </div>
+        </div>
+        <div class="experience-details">
+          <ul>
+            <li>Automated portfolio reporting with 8 VBA macros in Excel, <strong>reducing manual effort by 40%</strong></li>
+            <li>Calculated Sharpe Ratio, Beta, and Maximum Drawdown for <strong>12 client portfolios</strong> supporting monthly reviews</li>
+            <li>Processed and monitored market data from <strong>80+ securities (NSE/BSE)</strong>, building risk assessment dashboards</li>
+            <li>Performed time series analysis on 15 mid-cap funds to support asset allocation decisions</li>
+            <li>Prepared quantitative analysis for <strong>24+ client presentations</strong>, assisting investment advisors</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Data Science Intern – Equity Research</h3>
+          <div class="company-period">
+            <span class="company">Bloom Infotech</span>
+            <span class="period">Jan 2023 – Jun 2023</span>
+          </div>
+        </div>
+        <div class="experience-details">
+          <ul>
+            <li>Built Random Forest and LSTM models to forecast equity prices, <strong>increasing accuracy by 14%</strong> over baseline</li>
+            <li>Cleaned and engineered features from 1-year daily OHLCV data for 25 stocks using Python</li>
+            <li>Achieved <strong>78% test accuracy</strong> through rigorous backtesting and cross-validation</li>
+            <li>Developed 4 interactive dashboards with Matplotlib and Seaborn to visualize trading signals</li>
+            <li>Discovered 8 novel trading signals and documented methodologies to guide future research</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Project Section -->
+  <section id="projects">
+    <div class="section-header">
+      <h2>Featured Projects</h2>
+    </div>
+    
+    <div class="projects-grid">
+      <div class="project-card" onclick="window.open('https://github.com/gautamprasad/time-series-reliance-nifty', '_blank')">
+        <h3>Time Series Modeling – Reliance & Nifty 50</h3>
+        <p>Advanced ARMA-GARCH modeling for volatility forecasting and risk management</p>
+        <ul>
+          <li>Implemented ARMA-GARCH models for volatility clustering analysis</li>
+          <li>Forecasted 5-day returns for portfolio risk management</li>
+          <li>Applied AIC/BIC criteria for optimal model selection</li>
+          <li>Conducted stationarity and residual diagnostic testing</li>
+        </ul>
+        <div class="project-meta">GARCH Models • Risk Management • Python</div>
+      </div>
+
+      <div class="project-card" onclick="window.open('https://github.com/gautamprasad/option-pricing-models', '_blank')">
+        <h3>Option Pricing Models Implementation</h3>
+        <p>Black-Scholes and Chooser Options with Greek sensitivities analysis</p>
+        <ul>
+          <li>Developed Black-Scholes model with full Greek sensitivities</li>
+          <li>Extended implementation to Simple Chooser Options</li>
+          <li>Created interactive visualizations for option price dynamics</li>
+          <li>Built comparative analysis framework for different option types</li>
+        </ul>
+        <div class="project-meta">Derivatives • Black-Scholes • Greeks Analysis</div>
+      </div>
+
+      <div class="project-card" onclick="window.open('https://github.com/gautamprasad/us-gdp-forecasting', '_blank')">
+        <h3>US GDP Econometric Forecasting</h3>
+        <p>Power Regression model achieving 96.15% accuracy with macroeconomic data</p>
+        <ul>
+          <li>Built Power Regression model achieving 96.15% accuracy</li>
+          <li>Analyzed 20+ years of macroeconomic indicator data</li>
+          <li>Applied advanced trend decomposition techniques</li>
+          <li>Conducted comprehensive diagnostic testing for model validation</li>
+        </ul>
+        <div class="project-meta">Econometrics • Non-linear Regression • Gretl</div>
+      </div>
+
+      <div class="project-card" onclick="window.open('https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4824929', '_blank')">
+        <h3>ML vs Traditional Methods Research</h3>
+        <p>Published comparative study on machine learning vs statistical forecasting</p>
+        <ul>
+          <li>Conducted comparative study on ML vs statistical forecasting methods</li>
+          <li>Analyzed performance across multiple equity prediction scenarios</li>
+          <li>Published findings with industry-relevant recommendations</li>
+          <li>Featured on SSRN with implications for quantitative trading strategies</li>
+        </ul>
+        <div class="project-meta">Research Publication • SSRN • Machine Learning</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills">
+    <div class="section-header">
+      <h2>Technical Skills</h2>
+    </div>
+    
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Programming:</h3>
+        <div class="skill-list">Python, R, SQL, VBA, Jupyter Notebooks, Git/GitHub</div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Financial Analysis:</h3>
+        <div class="skill-list">Time Series Analysis, ARMA-GARCH Models, Portfolio Theory, Risk Management, Derivatives Pricing, Financial Econometrics</div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Data Science:</h3>
+        <div class="skill-list">Pandas, NumPy, Scikit-learn, Random Forest, LSTM Networks, Feature Engineering</div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Tools & Visualization:</h3>
+        <div class="skill-list">Matplotlib, Seaborn, Tableau, Excel (Advanced), Interactive Dashboards, Gretl</div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Education Section -->
+     <!-- Education Section -->
+<section id="education">
+  <div class="section-header">
+    <h2>Education</h2>
+  </div>
+  
+  <div class="education-container">
+    
+    <!-- Master's Degree -->
+    <div class="education-item">
+      <div class="education-header">
+        <h3>Master's in Quantitative Finance</h3>
+        <div class="university-period">
+          <span class="university">
+            Poznań University of Economics and Business – Poznań 
+            <img src="https://flagcdn.com/w20/pl.png" alt="Poland Flag" width="18" style="vertical-align: middle; margin-left: 6px;">
+          </span>
+          <span class="edu-period">2024 – 2026</span>
+        </div>
+      </div>
+      <div class="education-details">
+        Coursework: Derivatives Pricing, Risk Modeling, Financial Econometrics, Algorithmic Trading.
+      </div>
+    </div>
+    
+    <!-- Bachelor's Degree -->
+    <div class="education-item">
+      <div class="education-header">
+        <h3>Bachelor's in Computer Science and Engineering</h3>
+        <div class="university-period">
+          <span class="university">
+            Chandigarh University – Mohali 
+            <img src="https://flagcdn.com/w20/in.png" alt="India Flag" width="18" style="vertical-align: middle; margin-left: 6px;">
+          </span>
+          <span class="edu-period">2020 – 2024</span>
+        </div>
+      </div>
+      <div class="education-details">
+        Strong foundation in programming, data structures, algorithms, and quantitative analysis. Relevant coursework in Machine Learning, Statistics, and Data Analysis.
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+  
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Let's Connect</h2>
+    <p>Interested in quantitative finance, research collaboration, or career opportunities? I'd love to hear from you.</p>
+    <div class="contact-links">
+      <a href="mailto:work.gautamprasad@gmail.com" class="contact-link">
+        <span>📧</span>
+        <span>work.gautamprasad@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/gautamprasadwork" target="_blank" class="contact-link">
+        <span>💼</span>
+        <span>LinkedIn Profile</span>
+      </a>
+      <a href="#" class="contact-link">
+        <span>📍</span>
+        <span>Poznań, Poland</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2025 Gautam Prasad. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
