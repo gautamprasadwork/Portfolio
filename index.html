@@ -305,6 +305,18 @@
       background: #fff
     }
 
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 28px
+    }
+
+    @media(max-width:760px) {
+      .projects-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
     .pitem h3 {
       font-family: 'Fraunces', serif;
       font-size: 20px;
@@ -322,6 +334,27 @@
     .pitem h3 a:hover {
       color: var(--navy);
       border-color: var(--green)
+    }
+
+    .live-btn {
+      display: inline-flex;
+      align-items: center;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--navy);
+      background: var(--green-bg);
+      border: 1px solid #c9d8bb;
+      border-radius: 99px;
+      padding: 6px 10px;
+      margin-left: 8px;
+      vertical-align: middle;
+      cursor: default
+    }
+
+    .live-btn:disabled {
+      opacity: 1
     }
 
     .prow {
@@ -407,7 +440,7 @@
       list-style: none;
       font-size: 13.5px;
       color: var(--soft);
-      padding-left: 18px;
+      padding-left: 20px;
       position: relative;
       margin-bottom: 5px;
       max-width: 760px
@@ -782,12 +815,18 @@
           <h3>Finance Analyst</h3>
           <p class="org">AllForExpo Sp. z o.o. <span>· International exhibition &amp; event company</span></p>
           <ul>
-            <li>Automated reporting and data-validation workflows in Excel and Power BI, cutting the month-end close
-              cycle <b>from 5 days to 2</b></li>
-            <li>Built <b>Power BI KPI dashboards</b> used by management for project-profitability and budget decisions</li>
-            <li>Processed and reconciled <b>500+ invoices monthly</b>; analysed spend across <b>40+ vendors</b> to
-              support sourcing decisions</li>
-            <li>Coordinated financial operations with clients and partners across the <b>USA, Dubai, and Europe</b></li>
+            <li>Processed and reconciled <b>500+ vendor and employee invoices</b> monthly, ensuring <b>accuracy and compliance</b>
+              with financial procedures.</li>
+            <li>Collaborated with <b>40+ vendors</b> and internal stakeholders to resolve payment, documentation, and
+              operational issues.</li>
+            <li>Maintained regular communication with clients and business partners across <b>USA, Dubai, and Europe</b> to
+              support project execution and financial operations.</li>
+            <li>Analyzed <b>project expenses</b> and prepared <b>monthly reports</b> to support budgeting and management
+              decision-making.</li>
+            <li>Developed <b>KPI dashboards in Power BI</b> to improve visibility into project performance and financial
+              metrics.</li>
+            <li>Automated reporting and data-validation processes in <b>Excel</b>, improving efficiency and reporting
+              accuracy.</li>
           </ul>
         </div>
       </div>
@@ -801,69 +840,37 @@
         <h2>Projects</h2>
       </div>
 
-      <div class="pitem" tabindex="0">
-        <h3><a href="https://github.com/gautamprasadwork/cva-counterparty-credit-risk" target="_blank"
-            rel="noreferrer">Counterparty Credit Risk: CVA Pricing ↗</a></h3>
-        <p class="pline">An OTC derivative loses money if the other side goes bankrupt, and that risk needs a price.</p>
-        <div class="rmore">
-          <p class="prow"><span class="pl">Did</span>Simulated 10,000 market scenarios to value a two-trade portfolio
-            against Deutsche Bank, with default probabilities from CDS spreads.</p>
-          <p class="prow"><span class="pl">Result</span>CVA of <b>10,485 PLN</b>; netting cut it <b>18%</b>, collateral
-            <b>81.5%</b>.
-          </p>
-          <p class="ptagline">Credit Risk Modeling, Monte Carlo Simulation, R</p>
+      <div class="projects-grid">
+        <div class="pitem" tabindex="0">
+          <h3><a href="https://github.com/gautamprasadwork/cva-counterparty-credit-risk" target="_blank"
+              rel="noreferrer">Counterparty Credit Risk: CVA Pricing</a><button class="live-btn" type="button" disabled>Live</button></h3>
+          <p class="pline">How should counterparty default risk be priced for an OTC derivatives portfolio?</p>
         </div>
-      </div>
 
-      <div class="pitem" tabindex="0">
-        <h3><a href="https://github.com/gautamprasadwork/Modelling-Volatility" target="_blank"
-            rel="noreferrer">Volatility Forecasting &amp; Market Spillovers ↗</a></h3>
-        <p class="pline">How volatile will Indian equities be, and how much of their risk comes from abroad?</p>
-        <div class="rmore">
-          <p class="prow"><span class="pl">Did</span>Compared six GARCH models on 12 years of data, then measured shock
-            transmission from the S&amp;P 500, VIX, and oil.</p>
-          <p class="prow"><span class="pl">Result</span><b>28.9%</b> of market moves come from cross-market spillovers;
-            NIFTY 50 is a <b>net risk receiver</b>.</p>
-          <p class="ptagline">Volatility Modeling (GARCH), Time Series Econometrics, R</p>
+        <div class="pitem" tabindex="0">
+          <h3><a href="https://github.com/gautamprasadwork/Asian-Option-Pricing-Monte-Carlo" target="_blank"
+              rel="noreferrer">Exotic Option Pricing: Monte Carlo</a><button class="live-btn" type="button" disabled>Live</button></h3>
+          <p class="pline">How can a path-dependent Asian option be priced accurately without a closed-form formula?</p>
         </div>
-      </div>
 
-      <div class="pitem" tabindex="0">
-        <h3><a href="https://github.com/gautamprasadwork/equity-valuation" target="_blank" rel="noreferrer">Company
-            Valuation: ORLEN Group ↗</a></h3>
-        <p class="pline">What is Poland's largest energy company actually worth?</p>
-        <div class="rmore">
-          <p class="prow"><span class="pl">Did</span>Estimated the cost of capital (WACC 8.8%) and built a five-year
-            cash-flow forecast to derive intrinsic value.</p>
-          <p class="prow"><span class="pl">Result</span>Intrinsic <b>104.95 PLN</b> vs market 107.96: <b>fairly
-              valued</b>.</p>
-          <p class="ptagline">Financial Modeling, DCF Valuation, WACC, Excel</p>
+        <div class="pitem" tabindex="0">
+          <h3><a href="https://github.com/gautamprasadwork/Modelling-Volatility" target="_blank"
+              rel="noreferrer">Volatility Forecasting &amp; Market Spillovers</a><button class="live-btn" type="button" disabled>Live</button></h3>
+          <p class="pline">How accurately can equity-market volatility be forecast, and how much risk comes from abroad?</p>
         </div>
-      </div>
 
-      <div class="pitem hidden-proj" tabindex="0">
-        <h3><a href="https://github.com/gautamprasadwork/corporate-default-prediction" target="_blank"
-            rel="noreferrer">Corporate Bankruptcy Prediction ↗</a></h3>
-        <p class="pline">Can financial statements warn us that a company is heading for failure?</p>
-        <div class="rmore">
-          <p class="prow"><span class="pl">Did</span>Tested ten early-warning models on ten listed Polish companies.</p>
-          <p class="prow"><span class="pl">Result</span>Ranked which models <b>actually work outside the US data</b>
-            they were built on.</p>
-          <p class="ptagline">Credit Risk, Bankruptcy Prediction, Model Validation</p>
+        <div class="pitem" tabindex="0">
+          <h3><a href="https://github.com/gautamprasadwork/equity-valuation" target="_blank"
+              rel="noreferrer">Company Valuation: ORLEN Group</a><button class="live-btn" type="button" disabled>Live</button></h3>
+          <p class="pline">What is ORLEN's intrinsic value based on projected cash flows?</p>
         </div>
-      </div>
 
-      <div class="pitem hidden-proj" tabindex="0" style="border-bottom:none">
-        <h3><a href="https://github.com/gautamprasadwork/Asian-Option-Pricing-Monte-Carlo" target="_blank"
-            rel="noreferrer">Exotic Option Pricing: Monte Carlo ↗</a></h3>
-        <p class="pline">Asian options have no exact pricing formula, so how do you price one?</p>
-        <div class="rmore">
-          <p class="prow"><span class="pl">Did</span>Priced them by simulation, adding a geometric control variate to
-            cut the estimation error.</p>
-          <p class="prow"><span class="pl">Result</span><b>Far tighter confidence intervals</b> at the same simulation
-            cost.</p>
-          <p class="ptagline">Derivatives Pricing, Monte Carlo Simulation, Python</p>
+        <div class="pitem hidden-proj" tabindex="0" style="border-bottom:none">
+          <h3><a href="https://github.com/gautamprasadwork/corporate-default-prediction" target="_blank"
+              rel="noreferrer">Corporate Bankruptcy Prediction</a><button class="live-btn" type="button" disabled>Live</button></h3>
+          <p class="pline">Can financial statements identify companies at risk of bankruptcy?</p>
         </div>
+
       </div>
 
       <div class="work-actions">
@@ -907,25 +914,10 @@
 
       <div class="pitem" tabindex="0">
         <h3>Volatility Forecasting in Developed and Emerging Equity Markets Using a Hybrid GARCH–LSTM Model</h3>
-        <p class="rsub">S&amp;P 500 · DAX · NIFTY 50 · WIG20</p>
-        <ul class="rmore">
-          <li>MSc thesis, in progress, 2015–2026 daily data</li>
-          <li>Comparing hybrid econometric–neural architectures against standalone GARCH and LSTM models for
-            out-of-sample volatility prediction</li>
-          <li>Testing whether model rankings hold across market structures and volatility regimes, with <b>VaR
-              backtesting</b> as the evaluation lens</li>
-        </ul>
       </div>
 
       <div class="pitem" tabindex="0" style="border-bottom:none">
-        <h3>Conventional Methods vs Machine Learning in Stock Market Prediction</h3>
-        <p class="rsub">LSTM · Random Forest · KNN</p>
-        <ul class="rmore">
-          <li><b>SSRN preprint</b>, May 2024</li>
-          <li>Benchmarked LSTM, random forest, and KNN against traditional statistical methods for equity forecasting
-          </li>
-          <li>LSTM improved predictive accuracy by <b>~15%</b> over conventional baselines</li>
-        </ul>
+        <h3>A Comparative Study on Conventional Methods and Machine Learning Approaches on Stock Market Prediction</h3>
       </div>
     </div>
   </section>
