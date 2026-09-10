@@ -1,723 +1,1071 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gautam Prasad - Quantitative Finance</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background: #fafafa;
-            color: #1a1a1a;
-            line-height: 1.5;
-            padding: 30px 20px;
-        }
-
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 35px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            position: relative;
-        }
-
-        /* HEADER SECTION */
-        .header-section {
-            margin-bottom: 28px;
-        }
-
-        .name-and-links {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            gap: 30px;
-        }
-
-        .name-section {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .name-header h1 {
-            font-size: 2.2em;
-            color: #000;
-            margin-bottom: 0;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            white-space: nowrap;
-            display: inline;
-        }
-
-        .contact-links-inline {
-            font-size: 0.9em;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            white-space: nowrap;
-        }
-
-        .contact-links-inline a {
-            color: #1a1a1a;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
-            font-weight: 500;
-        }
-
-        .contact-links-inline a:hover {
-            border-bottom: 1px solid #000;
-        }
-
-        .name-nav-links {
-            display: flex;
-            gap: 16px;
-            flex-wrap: nowrap;
-        }
-
-        .name-nav-links a {
-            color: #1a1a1a;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
-            font-size: 0.9em;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        .name-nav-links a:hover {
-            border-bottom: 1px solid #000;
-        }
-
-        .content-wrapper {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 50px;
-        }
-
-        .left-section {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .about-section p {
-            font-size: 0.95em;
-            color: #444;
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
-
-        .thesis {
-            font-size: 0.9em;
-            color: #555;
-            font-weight: 500;
-            line-height: 1.5;
-            margin-bottom: 12px;
-        }
-
-        .thesis strong {
-            color: #000;
-        }
-
-        .upcoming-section {
-            margin-top: 8px;
-        }
-
-        .upcoming-label {
-            font-size: 0.85em;
-            color: #000;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }
-
-        .cfa-exam {
-            font-size: 0.9em;
-            color: #2d5a3d;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .cfa-exam:before {
-            content: "✓";
-            font-weight: bold;
-            color: #2d5a3d;
-        }
-
-        .right-section {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .education-section h3 {
-            font-size: 0.85em;
-            color: #000;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0;
-        }
-
-        .education-contact-links {
-            display: flex;
-            gap: 14px;
-            flex-wrap: nowrap;
-        }
-
-        .education-contact-links a {
-            color: #1a1a1a;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
-            font-size: 0.8em;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        .education-contact-links a:hover {
-            border-bottom: 1px solid #000;
-        }
-
-        .education-item {
-            margin-bottom: 14px;
-            font-size: 0.9em;
-        }
-
-        .degree-line {
-            display: block;
-            margin-bottom: 3px;
-            white-space: normal;
-        }
-
-        .education-item .degree {
-            font-weight: 600;
-            color: #1a1a1a;
-            display: inline;
-        }
-
-        .education-item .university {
-            color: #555;
-            display: inline;
-        }
-
-        .education-item .gpa {
-            display: block;
-            color: #2d5a3d;
-            font-weight: 600;
-            font-size: 0.85em;
-            margin-top: 3px;
-        }
-
-        .education-item .gpa-compact {
-            display: inline;
-            color: #2d5a3d;
-            font-weight: 600;
-            font-size: 0.85em;
-            margin-left: 0;
-        }
-
-        .education-item .details {
-            display: block;
-            color: #666;
-            font-size: 0.85em;
-            margin-top: 3px;
-            line-height: 1.5;
-        }
-
-        .education-item .details a {
-            color: #1a1a1a;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .education-item .details a:hover {
-            border-bottom: 1px solid #000;
-        }
-
-        /* SKILLS SECTION */
-        .skills-section {
-            margin-bottom: 28px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e8e8e8;
-        }
-
-        .skills-section h3 {
-            font-size: 0.85em;
-            color: #000;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 20px;
-        }
-
-        .skill-bullet {
-            font-size: 0.9em;
-            color: #555;
-        }
-
-        .skill-bullet:before {
-            content: "•";
-            margin-right: 8px;
-            color: #1a1a1a;
-            font-weight: bold;
-        }
-
-        /* PROJECTS & EXPERIENCE SECTION */
-        .content-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .projects-column, .experience-column {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .section-title {
-            font-size: 0.9em;
-            color: #000;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid #000;
-            padding-bottom: 10px;
-            scroll-margin-top: 60px;
-        }
-
-        /* PROJECT ITEM */
-        .project-item {
-            padding: 12px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 6px;
-        }
-
-        .project-name {
-            font-weight: 600;
-            color: #1a1a1a;
-            font-size: 0.95em;
-        }
-
-        .project-github {
-            font-size: 0.8em;
-            white-space: nowrap;
-        }
-
-        .project-github a {
-            color: #1a1a1a;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
-            font-weight: 500;
-        }
-
-        .project-github a:hover {
-            border-bottom: 1px solid #000;
-        }
-
-        .project-desc {
-            font-size: 0.85em;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .project-desc li {
-            margin-left: 16px;
-            margin-bottom: 3px;
-        }
-
-        /* EXPERIENCE ITEM */
-        .experience-item {
-            padding: 12px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-            gap: 10px;
-        }
-
-        .job-title {
-            font-weight: 600;
-            color: #1a1a1a;
-            font-size: 0.95em;
-        }
-
-        .job-date {
-            font-size: 0.8em;
-            color: #999;
-            font-style: italic;
-            white-space: nowrap;
-        }
-
-        .job-company {
-            color: #2d5a3d;
-            font-size: 0.85em;
-            margin-bottom: 4px;
-            font-weight: 600;
-        }
-
-        .experience-item ul {
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .experience-item li {
-            font-size: 0.85em;
-            color: #666;
-            margin-bottom: 3px;
-            padding-left: 16px;
-            position: relative;
-            line-height: 1.5;
-        }
-
-        .experience-item li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #1a1a1a;
-            font-weight: bold;
-        }
-
-        /* ACHIEVEMENTS SECTION */
-        .achievements-section {
-            margin-top: 15px;
-            padding-top: 12px;
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .achievements-title {
-            font-weight: 600;
-            color: #1a1a1a;
-            font-size: 0.8em;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .achievement-item {
-            font-size: 0.85em;
-            color: #666;
-            margin-bottom: 4px;
-            padding-left: 16px;
-            position: relative;
-            line-height: 1.5;
-        }
-
-        .achievement-item:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #1a1a1a;
-            font-weight: bold;
-        }
-
-        /* FOOTER */
-        .footer {
-            text-align: center;
-            padding-top: 20px;
-            margin-top: 28px;
-            border-top: 1px solid #e8e8e8;
-            font-size: 0.8em;
-            color: #999;
-        }
-
-        .footer a {
-            color: #1a1a1a;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .footer a:hover {
-            border-bottom: 1px solid #000;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 1000px) {
-            .content-wrapper, .content-section {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .name-and-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .name-header h1 {
-                font-size: 1.8em;
-            }
-
-            .education-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-
-            .name-and-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .name-header h1 {
-                font-size: 1.5em;
-            }
-
-            .name-nav-links {
-                gap: 10px;
-                font-size: 0.85em;
-            }
-
-            .education-contact-links {
-                gap: 10px;
-                font-size: 0.75em;
-            }
-
-            .skills-list {
-                gap: 5px 15px;
-            }
-
-            .project-header {
-                flex-direction: column;
-                gap: 2px;
-            }
-
-            .project-github {
-                font-size: 0.75em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gautam Prasad · Risk & Quantitative Analytics</title>
+  <meta name="description"
+    content="Risk and quantitative analytics: counterparty credit risk (CVA), volatility modelling, derivatives pricing, equity valuation. Python · R · SQL · Power BI.">
+  <meta property="og:title" content="Gautam Prasad · Risk & Quantitative Analytics">
+  <meta property="og:description"
+    content="Finance is full of uncertainty. I measure it. CVA · GARCH · Monte Carlo · DCF: reproducible models, MSc Quantitative Finance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gautamprasadwork.github.io/Portfolio/">
+  <meta property="og:image" content="https://gautamprasadwork.github.io/Portfolio/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://gautamprasadwork.github.io/Portfolio/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gautam Prasad · Risk & Quantitative Analytics">
+  <meta name="twitter:description" content="Credit risk, volatility modelling, derivatives pricing, and valuation projects.">
+  <meta name="twitter:image" content="https://gautamprasadwork.github.io/Portfolio/og.png">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23123f33'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23fdfcf8' text-anchor='middle'%3EGP%3C/text%3E%3Ccircle cx='50' cy='46' r='4' fill='%23dcb25f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fdfcf8;
+      --ink: #1e231f;
+      --soft: #57604f;
+      --faint: #a1a795;
+      --navy: #123f33;
+      --navy-2: #1a5949;
+      --green: #8a6a1f;
+      --green-lt: #dcb25f;
+      --green-bg: #edf3e4;
+      --line: #e8e6da;
+      --line-strong: #1e231f;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: #dcebd8
+    }
+
+    .wrap {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0 28px
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(253, 252, 248, .94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding-top: 18px
+    }
+
+    .nav-in {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px
+    }
+
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 600
+    }
+
+    .logo em {
+      font-style: normal;
+      color: var(--green)
+    }
+
+    .nav-r {
+      display: flex;
+      align-items: center;
+      gap: 26px
+    }
+
+    .nav-r a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--soft)
+    }
+
+    .nav-r a:hover {
+      color: var(--navy)
+    }
+
+    .nav-cv {
+      color: var(--bg) !important;
+      background: var(--navy);
+      padding: 7px 16px;
+      border-radius: 99px;
+      transition: .15s
+    }
+
+    .nav-cv:hover {
+      background: var(--navy-2)
+    }
+
+    @media(max-width:760px) {
+      .nav-r a:not(.nav-cv) {
+        display: none
+      }
+    }
+
+    .hero {
+      padding: 44px 0 40px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center
+    }
+
+    @media(max-width:760px) {
+      .hero-grid {
+        grid-template-columns: 1fr
+      }
+
+      .portrait {
+        order: -1;
+        justify-self: start
+      }
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: clamp(28px, 3.4vw, 38px);
+      line-height: 1.06;
+      letter-spacing: -.02em;
+      margin-bottom: 16px
+    }
+
+    h1 .q {
+      color: var(--navy);
+      font-style: italic
+    }
+
+    .hero-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.65;
+      letter-spacing: 0;
+      margin-bottom: 6px
+    }
+
+    .thesis-line {
+      font-size: 13px;
+      color: var(--soft);
+      max-width: 540px;
+      margin-bottom: 12px
+    }
+
+    .lede {
+      font-size: 16px;
+      color: var(--soft);
+      max-width: 540px;
+      margin-bottom: 12px
+    }
+
+    .lede b {
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    .toolline {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: #1b4470;
+      margin-bottom: 24px
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 99px;
+      transition: .15s
+    }
+
+    .cta-dark {
+      background: var(--navy);
+      color: #fff
+    }
+
+    .cta-dark:hover {
+      background: var(--navy-2)
+    }
+
+    .cta-line {
+      border: 1px solid var(--line);
+      background: #fff
+    }
+
+    .cta-line:hover {
+      border-color: var(--navy)
+    }
+
+    .portrait {
+      width: 230px
+    }
+
+    .portrait img {
+      width: 230px;
+      height: 290px;
+      object-fit: cover;
+      object-position: 50% 22%;
+      border-radius: 12px;
+      display: block;
+      filter: saturate(.94);
+      box-shadow: 0 16px 36px -16px rgba(18, 63, 51, .38)
+    }
+
+    .portrait .fallback {
+      width: 230px;
+      height: 290px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: #fff;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 64px
+    }
+
+    section {
+      padding: 38px 0
+    }
+
+    .sec-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid var(--line-strong);
+      padding-bottom: 12px;
+      margin-bottom: 24px
+    }
+
+    .sec-top h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: -.01em
+    }
+
+    .pitem {
+      padding: 20px 8px;
+      border-bottom: 1px solid var(--line);
+      transition: background .2s;
+      border-radius: 8px
+    }
+
+    .pitem:hover {
+      background: #fff
+    }
+
+    .pitem h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -.01em;
+      margin-bottom: 8px
+    }
+
+    .pitem h3 a {
+      color: var(--ink);
+      border-bottom: 1.5px solid transparent;
+      transition: .15s
+    }
+
+    .pitem h3 a:hover {
+      color: var(--navy);
+      border-color: var(--green)
+    }
+
+    .prow {
+      font-size: 13.5px;
+      color: var(--soft);
+      max-width: 760px;
+      margin-bottom: 4px;
+      padding-left: 86px;
+      position: relative
+    }
+
+    .prow .pl {
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--faint)
+    }
+
+    .prow b {
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    .ptagline {
+      font-size: 13px;
+      color: var(--green);
+      font-weight: 500;
+      margin-top: 8px
+    }
+
+    .pline {
+      font-size: 14px;
+      color: var(--soft);
+      max-width: 760px;
+      margin-top: 2px
+    }
+
+    .hidden-proj {
+      display: none
+    }
+
+    .work-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-top: 24px;
+      flex-wrap: wrap
+    }
+
+    .showmore {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+      background: var(--navy);
+      border: none;
+      cursor: pointer;
+      padding: 10px 22px;
+      border-radius: 99px;
+      transition: .15s
+    }
+
+    .showmore:hover {
+      background: var(--navy-2)
+    }
+
+    .rsub {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--green);
+      margin-top: 2px
+    }
+
+    .rmore {
+      margin-top: 10px
+    }
+
+    .rmore li {
+      list-style: none;
+      font-size: 13.5px;
+      color: var(--soft);
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 5px;
+      max-width: 760px
+    }
+
+    .rmore li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--green)
+    }
+
+    .rmore li b {
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    .xhead {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .xlogo {
+      width: 30px;
+      height: 30px;
+      flex: none;
+      position: relative
+    }
+
+    .xlogo img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block
+    }
+
+    .xfb {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: #fff
+    }
+
+    .xwhen {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--faint);
+      margin-left: auto
+    }
+
+    .xphotos {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px
+    }
+
+    .xphotos img {
+      height: 110px;
+      border-radius: 8px;
+      border: 1px solid var(--line)
+    }
+
+    .xp-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 34px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    @media(max-width:760px) {
+      .xp-row {
+        grid-template-columns: 1fr;
+        gap: 8px
+      }
+    }
+
+    .xp-when {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--faint);
+      padding-top: 5px;
+      line-height: 1.9
+    }
+
+    .xp-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 21px;
+      font-weight: 500
+    }
+
+    .xp-body .org {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green);
+      margin: 2px 0 14px
+    }
+
+    .xp-body .org span {
+      color: var(--navy);
+      font-weight: 400
+    }
+
+    .xp-body ul {
+      list-style: none
+    }
+
+    .xp-body li {
+      font-size: 14.5px;
+      color: var(--soft);
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+      max-width: 760px
+    }
+
+    .xp-body li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--green)
+    }
+
+    .xp-body li b {
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    .lead-line {
+      padding: 22px 0;
+      font-size: 14px;
+      color: var(--soft)
+    }
+
+    .lead-line b {
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    .edu-route {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      margin-bottom: 36px
+    }
+
+    @media(max-width:760px) {
+      .edu-route {
+        grid-template-columns: 120px 1fr
+      }
+    }
+
+    .route-svg {
+      width: 100%;
+      height: 100%;
+      min-height: 250px
+    }
+
+    .edu-stops {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+      gap: 26px
+    }
+
+    .edu-stop {
+      padding: 2px 0
+    }
+
+    .skillrow {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      padding: 13px 0;
+      border-bottom: 1px dotted var(--line);
+      align-items: baseline
+    }
+
+    @media(max-width:760px) {
+      .skillrow {
+        grid-template-columns: 1fr;
+        gap: 6px
+      }
+    }
+
+    .skillrow:last-of-type {
+      border-bottom: none
+    }
+
+    .coursework {
+      font-size: 13px !important;
+      white-space: nowrap
+    }
+
+    @media(max-width:760px) {
+      .coursework {
+        white-space: normal
+      }
+    }
+
+    .skillrow .sl {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--faint)
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px
+    }
+
+    .chip {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--navy);
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 4px 13px;
+      border-radius: 99px
+    }
+
+    footer {
+      background: var(--navy);
+      color: #fff
+    }
+
+    .foot-in {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 44px 28px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap
+    }
+
+    footer h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1.2
+    }
+
+    footer h2 em {
+      font-style: italic;
+      color: #8fd6b4
+    }
+
+    .foot-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center
+    }
+
+    .fbtn {
+      display: inline-flex;
+      align-items: center;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 99px;
+      transition: .15s;
+      white-space: nowrap
+    }
+
+    .fbtn-solid {
+      background: #fff;
+      color: #123f33
+    }
+
+    .fbtn-solid:hover {
+      background: #8fd6b4
+    }
+
+    .fbtn-line {
+      border: 1px solid rgba(255, 255, 255, .3);
+      color: #fff
+    }
+
+    .fbtn-line:hover {
+      border-color: #8fd6b4;
+      color: #8fd6b4
+    }
+
+    .foot-base {
+      border-top: 1px solid rgba(255, 255, 255, .12)
+    }
+
+    .foot-base .wrap {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #9dc4ae
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <!-- HEADER SECTION -->
-        <div class="header-section">
-            <!-- NAME WITH CONTACT LINKS ON SAME LINE & NAVIGATION -->
-            <div class="name-and-links">
-                <div class="name-section">
-                    <h1 class="name-header">Gautam Prasad</h1>
-                    <div class="contact-links-inline">
-                        <a href="https://linkedin.com/in/gautamprasadwork" target="_blank">LinkedIn</a>
-                        <a href="mailto:work.gautamprasad@gmail.com">Email</a>
-                        <a href="https://github.com/gautamprasadwork" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="name-nav-links">
-                    <a href="#projects">Projects</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#achievements">Achievements</a>
-                </div>
-            </div>
 
-            <!-- ABOUT & EDUCATION -->
-            <div class="content-wrapper">
-                <div class="left-section">
-                    <div class="about-section">
-                        <p><strong>Credit Risk & Quantitative Finance Specialist</strong> with MSc Quantitative Finance (4.94/5.0 GPA). 6+ months building financial models, developing predictive analytics, and assessing portfolio risk. Expert in Python, SQL, R. Specialized in credit risk modeling, default probability estimation, and statistical analysis.</p>
-                    </div>
-                    <div class="thesis">
-                        <strong>Thesis:</strong> Hybrid GARCH–LSTM Volatility Forecasting (USA, Germany, India, Poland)
-
-
-                    </div>
-                    <div class="upcoming-section">
-                        <div class="upcoming-label">Upcoming</div>
-                        <div class="cfa-exam">Taking CFA Level I exam -- February 2027</div>
-                    </div>
-                </div>
-
-                <div class="right-section">
-                    <div class="education-item">
-                        <div class="degree-line">
-                            <span class="degree">MSc Quantitative Finance</span> · <span class="university">Poznań University of Economics & Business · Poland</span>
-                        </div>
-                        <div class="gpa">GPA: 4.94/5.0 · Rector's Scholarship</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="degree-line">
-                            <span class="degree">B.Eng. Computer Science</span> · <span class="university">Chandigarh University · India</span>
-                        </div>
-                        <div class="gpa">GPA: 8.51/10.0, 50% Merit Scholarship</div>
-                        <div class="details">Published Research: <a href="https://dx.doi.org/10.2139/ssrn.4824929" target="_blank">Stock Market Prediction using Machine Learning</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SKILLS SECTION -->
-        <div class="skills-section">
-            <h3>Core Competencies</h3>
-            <div class="skills-list">
-                <span class="skill-bullet">Python (NumPy, Pandas, Scikit-learn)</span>
-                <span class="skill-bullet">SQL & Data Engineering</span>
-                <span class="skill-bullet">R (ggplot2, quantmod)</span>
-                <span class="skill-bullet">Predictive Modeling & Machine Learning</span>
-                <span class="skill-bullet">Credit Risk Modeling (PD/LGD/EAD)</span>
-                <span class="skill-bullet">Financial Analysis & Valuation</span>
-                <span class="skill-bullet">Excel/VBA & Financial Modeling</span>
-                <span class="skill-bullet">Time Series & Statistical Analysis</span>
-                <span class="skill-bullet">Monte Carlo Simulation & Risk Assessment</span>
-            </div>
-        </div>
-
-        <!-- PROJECTS & EXPERIENCE SECTION -->
-        <div class="content-section">
-            <!-- PROJECTS COLUMN -->
-            <div class="projects-column">
-                <div class="section-title" id="projects">Projects</div>
-
-                <div class="project-item">
-                    <div class="project-header">
-                        <div class="project-name">Counterparty Credit Risk (CVA/DVA)</div>
-                        <div class="project-github"><a href="https://github.com/gautamprasadwork/cva-fx-forward-irs" target="_blank">View on GitHub →</a></div>
-                    </div>
-                    <div class="project-desc">
-                        <ul>
-                            <li>Bilateral credit risk valuation: CDS bootstrapping, Monte Carlo simulation, FX/IRS derivatives</li>
-                            <li>Hull-White interest rate modeling for fixed income; exposure quantification & risk metrics</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-header">
-                        <div class="project-name">Equity Research: Lockheed Martin</div>
-                        <div class="project-github"><a href="https://github.com/gautamprasadwork/lmt-equity-research-cfa" target="_blank">View on GitHub →</a></div>
-                    </div>
-                    <div class="project-desc">
-                        <ul>
-                            <li>9-sheet financial model with 20+ ratios, DuPont decomposition, peer benchmarking</li>
-                            <li>CFA framework analysis across 4 defense contractors</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-header">
-                        <div class="project-name">DCF Valuation: ORLEN</div>
-                        <div class="project-github"><a href="https://github.com/gautamprasadwork/orlen-dcf-wacc-valuation" target="_blank">View on GitHub →</a></div>
-                    </div>
-                    <div class="project-desc">
-                        <ul>
-                            <li>End-to-end DCF with 5-year FCF forecast, WACC 8.8% via CAPM</li>
-                            <li>Sensitivity analysis & regulatory framework considerations</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-header">
-                        <div class="project-name">Portfolio Volatility Risk & Spillover Analysis</div>
-                        <div class="project-github"><a href="https://github.com/gautamprasadwork/var-spillover-nifty50" target="_blank">View on GitHub →</a></div>
-                    </div>
-                    <div class="project-desc">
-                        <ul>
-                            <li>Diebold-Yilmaz directional spillover analysis: NIFTY 50, S&P 500, VIX, WTI (12-year daily data)</li>
-                            <li>Volatility transmission modeling for portfolio risk assessment & correlation analysis</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-header">
-                        <div class="project-name">Time Series Volatility Forecasting (ARMA-GARCH)</div>
-                        <div class="project-github"><a href="https://github.com/gautamprasadwork/arma-garch-volatility-modelling" target="_blank">View on GitHub →</a></div>
-                    </div>
-                    <div class="project-desc">
-                        <ul>
-                            <li>Comparative volatility modeling: GARCH(1,1), EGARCH, GJR-GARCH with performance analysis</li>
-                            <li>Forecasting accuracy assessment on Reliance Industries & NIFTY 50 index data</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- EXPERIENCE & ACHIEVEMENTS COLUMN -->
-            <div class="experience-column">
-                <div class="section-title" id="experience">Experience</div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="job-title">Finance Analyst</div>
-                        <div class="job-date">Sep 2025 – Feb 2026</div>
-                    </div>
-                    <div class="job-company">AllForExpo Sp. z o.o., Poznań</div>
-                    <ul>
-                        <li>Financial risk management: reconciliation & exposure tracking across 40+ contracts (PLN 8M portfolio)</li>
-                        <li>Process optimization: reduced month-end close from 5 days to 2 days via Excel/VBA automation</li>
-                        <li>Forecasting & variance analysis: improved monthly budget accuracy by 30% with automated models</li>
-                        <li>Stakeholder reporting: prepared analytical dashboards & financial metrics for executive team</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="job-title">Changemaker (International Exchange)</div>
-                        <div class="job-date">Feb – Mar 2026</div>
-                    </div>
-                    <div class="job-company">NAWA PROM | PUEB × Oulu UAS</div>
-                    <ul>
-                        <li>Cross-cultural collaboration: 4 countries, 30 students</li>
-                        <li>Clear communication & problem-solving under tight deadlines</li>
-                    </ul>
-                </div>
-
-                <div class="achievements-section" id="achievements">
-                    <div class="achievements-title">Achievements</div>
-                    <div class="achievement-item">Rector's Scholarship Award (MSc Quantitative Finance, Poland)</div>
-                    <div class="achievement-item">4.94/5.0 GPA | Ranked top in quantitative & risk modeling courses</div>
-                    <div class="achievement-item">Published research on portfolio volatility spillover analysis</div>
-                    <div class="achievement-item">Expert in predictive modeling, risk valuation, derivatives pricing & credit analysis</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- FOOTER -->
-        <div class="footer">
-            © 2026 Gautam Prasad | <a href="https://github.com/gautamprasadwork" target="_blank">GitHub</a> · <a href="https://linkedin.com/in/gautamprasadwork" target="_blank">LinkedIn</a>
-        </div>
+  <nav>
+    <div class="wrap nav-in">
+      <a class="logo" href="#">Gautam <span style="color:#4d87c7">Prasad</span><em>.</em></a>
+      <div class="nav-r">
+        <a href="#experience">Work Experience</a>
+        <a href="#work">Projects</a>
+        <a href="#extras">Activities</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cv" href="cv.pdf" download>Download CV</a>
+      </div>
     </div>
+  </nav>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 class="hero-title">MSc Quantitative Finance</h1>
+        <p class="thesis-line"><b>Thesis:</b> Volatility Forecasting in Developed and Emerging Equity Markets Using a
+          Hybrid GARCH–LSTM Model</p>
+        <p class="lede">Early-career finance professional with hands-on experience in reporting, dashboarding, and
+          quantitative risk modelling. I use <b>Python, R, SQL, Excel, and Power BI</b> to turn financial data into
+          clear, decision-ready insights.</p>
+        <div class="cta-row">
+          <a class="cta cta-dark" href="#work">View selected projects ↓</a>
+          <a class="cta cta-line" href="cv.pdf" download>Download CV ↓</a>
+          <a class="cta cta-line" href="https://github.com/gautamprasadwork" target="_blank" rel="noreferrer">GitHub
+            ↗</a>
+          <a class="cta cta-line" href="https://linkedin.com/in/gautamprasadwork" target="_blank"
+            rel="noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div>
+        <div class="portrait">
+          <img src="photo-portrait.png" alt="Gautam Prasad"
+            onerror="if(!this.dataset.t){this.dataset.t=1;this.src='photo.png'}else{this.style.display='none';this.nextElementSibling.style.display='flex'}">
+          <div class="fallback">GP</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════ EXPERIENCE ═══════════ -->
+  <section id="experience" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2>Work Experience</h2>
+      </div>
+      <div class="xp-row">
+        <div class="xp-when">SEP 2025 – FEB 2026<br>POZNAN · HYBRID</div>
+        <div class="xp-body">
+          <h3>Finance Analyst</h3>
+          <p class="org">AllForExpo Sp. z o.o. <span>· International exhibition &amp; event company</span></p>
+          <ul>
+            <li>Automated reporting and data-validation workflows in Excel and Power BI, cutting the month-end close
+              cycle <b>from 5 days to 2</b></li>
+            <li>Built <b>Power BI KPI dashboards</b> used by management for project-profitability and budget decisions</li>
+            <li>Processed and reconciled <b>500+ invoices monthly</b>; analysed spend across <b>40+ vendors</b> to
+              support sourcing decisions</li>
+            <li>Coordinated financial operations with clients and partners across the <b>USA, Dubai, and Europe</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SELECTED WORK ═══════════ -->
+  <section id="work" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2>Projects</h2>
+      </div>
+
+      <div class="pitem" tabindex="0">
+        <h3><a href="https://github.com/gautamprasadwork/cva-counterparty-credit-risk" target="_blank"
+            rel="noreferrer">Counterparty Credit Risk: CVA Pricing ↗</a></h3>
+        <p class="pline">An OTC derivative loses money if the other side goes bankrupt, and that risk needs a price.</p>
+        <div class="rmore">
+          <p class="prow"><span class="pl">Did</span>Simulated 10,000 market scenarios to value a two-trade portfolio
+            against Deutsche Bank, with default probabilities from CDS spreads.</p>
+          <p class="prow"><span class="pl">Result</span>CVA of <b>10,485 PLN</b>; netting cut it <b>18%</b>, collateral
+            <b>81.5%</b>.
+          </p>
+          <p class="ptagline">Credit Risk Modeling, Monte Carlo Simulation, R</p>
+        </div>
+      </div>
+
+      <div class="pitem" tabindex="0">
+        <h3><a href="https://github.com/gautamprasadwork/Modelling-Volatility" target="_blank"
+            rel="noreferrer">Volatility Forecasting &amp; Market Spillovers ↗</a></h3>
+        <p class="pline">How volatile will Indian equities be, and how much of their risk comes from abroad?</p>
+        <div class="rmore">
+          <p class="prow"><span class="pl">Did</span>Compared six GARCH models on 12 years of data, then measured shock
+            transmission from the S&amp;P 500, VIX, and oil.</p>
+          <p class="prow"><span class="pl">Result</span><b>28.9%</b> of market moves come from cross-market spillovers;
+            NIFTY 50 is a <b>net risk receiver</b>.</p>
+          <p class="ptagline">Volatility Modeling (GARCH), Time Series Econometrics, R</p>
+        </div>
+      </div>
+
+      <div class="pitem" tabindex="0">
+        <h3><a href="https://github.com/gautamprasadwork/equity-valuation" target="_blank" rel="noreferrer">Company
+            Valuation: ORLEN Group ↗</a></h3>
+        <p class="pline">What is Poland's largest energy company actually worth?</p>
+        <div class="rmore">
+          <p class="prow"><span class="pl">Did</span>Estimated the cost of capital (WACC 8.8%) and built a five-year
+            cash-flow forecast to derive intrinsic value.</p>
+          <p class="prow"><span class="pl">Result</span>Intrinsic <b>104.95 PLN</b> vs market 107.96: <b>fairly
+              valued</b>.</p>
+          <p class="ptagline">Financial Modeling, DCF Valuation, WACC, Excel</p>
+        </div>
+      </div>
+
+      <div class="pitem hidden-proj" tabindex="0">
+        <h3><a href="https://github.com/gautamprasadwork/corporate-default-prediction" target="_blank"
+            rel="noreferrer">Corporate Bankruptcy Prediction ↗</a></h3>
+        <p class="pline">Can financial statements warn us that a company is heading for failure?</p>
+        <div class="rmore">
+          <p class="prow"><span class="pl">Did</span>Tested ten early-warning models on ten listed Polish companies.</p>
+          <p class="prow"><span class="pl">Result</span>Ranked which models <b>actually work outside the US data</b>
+            they were built on.</p>
+          <p class="ptagline">Credit Risk, Bankruptcy Prediction, Model Validation</p>
+        </div>
+      </div>
+
+      <div class="pitem hidden-proj" tabindex="0" style="border-bottom:none">
+        <h3><a href="https://github.com/gautamprasadwork/Asian-Option-Pricing-Monte-Carlo" target="_blank"
+            rel="noreferrer">Exotic Option Pricing: Monte Carlo ↗</a></h3>
+        <p class="pline">Asian options have no exact pricing formula, so how do you price one?</p>
+        <div class="rmore">
+          <p class="prow"><span class="pl">Did</span>Priced them by simulation, adding a geometric control variate to
+            cut the estimation error.</p>
+          <p class="prow"><span class="pl">Result</span><b>Far tighter confidence intervals</b> at the same simulation
+            cost.</p>
+          <p class="ptagline">Derivatives Pricing, Monte Carlo Simulation, Python</p>
+        </div>
+      </div>
+
+      <div class="work-actions">
+        <button class="showmore" id="showmore"
+          onclick="document.querySelectorAll('.hidden-proj').forEach(e=>e.classList.remove('hidden-proj'));this.style.display='none'">Show
+          all projects ↓</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EXTRA-CURRICULAR ═══════════ -->
+  <section id="extras" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2>Extra-Curricular Activities</h2>
+      </div>
+
+      <div class="pitem" tabindex="0" style="border-bottom:none">
+        <h3 class="xhead">
+          <a href="https://www.linkedin.com/in/gautamprasadwork/details/certifications/" target="_blank"
+            rel="noreferrer">Changemakers: Innovation &amp; Human-AI Collaboration Program (Poland &amp; Finland) ↗</a>
+          <span class="xwhen">MAR 2026</span>
+        </h3>
+        <p class="pline" style="margin-top:6px">SENSE Consulting · EU-funded Polish-Finnish exchange</p>
+        <div class="rmore">
+          <p class="pline">Selected for a competitive EU-funded program bringing together 30 students from Poland,
+            Finland, Spain, and India to develop social-innovation solutions using human-centred design and lean-startup
+            methodology.</p>
+          <p class="ptagline">Design Thinking, Innovation Management, Human-AI Collaboration</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ RESEARCH ═══════════ -->
+  <section id="research" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2>Research &amp; Publication</h2>
+      </div>
+
+      <div class="pitem" tabindex="0">
+        <h3>Volatility Forecasting in Developed and Emerging Equity Markets Using a Hybrid GARCH–LSTM Model</h3>
+        <p class="rsub">S&amp;P 500 · DAX · NIFTY 50 · WIG20</p>
+        <ul class="rmore">
+          <li>MSc thesis, in progress, 2015–2026 daily data</li>
+          <li>Comparing hybrid econometric–neural architectures against standalone GARCH and LSTM models for
+            out-of-sample volatility prediction</li>
+          <li>Testing whether model rankings hold across market structures and volatility regimes, with <b>VaR
+              backtesting</b> as the evaluation lens</li>
+        </ul>
+      </div>
+
+      <div class="pitem" tabindex="0" style="border-bottom:none">
+        <h3>Conventional Methods vs Machine Learning in Stock Market Prediction</h3>
+        <p class="rsub">LSTM · Random Forest · KNN</p>
+        <ul class="rmore">
+          <li><b>SSRN preprint</b>, May 2024</li>
+          <li>Benchmarked LSTM, random forest, and KNN against traditional statistical methods for equity forecasting
+          </li>
+          <li>LSTM improved predictive accuracy by <b>~15%</b> over conventional baselines</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EDUCATION ═══════════ -->
+  <section id="education">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2>Education &amp; Skills</h2>
+      </div>
+
+      <div class="edu-route">
+        <div><svg class="route-svg" viewBox="0 0 180 264" role="img"
+            aria-label="Flight from bachelor in India up to master in Poland">
+            <path id="flightpath" d="M 122 204 C 88 176 152 116 122 54" fill="none" stroke="#a1a795" stroke-width="1.3"
+              stroke-dasharray="5 5" />
+
+            <g>
+              <rect x="8" y="12" width="32" height="10.5" fill="#fff" stroke="#c9c4b2" stroke-width=".6" />
+              <rect x="8" y="22.5" width="32" height="10.5" fill="#DC2E44" />
+              <text x="8" y="50" font-family="IBM Plex Mono,monospace" font-size="10" fill="#57604f">POZNAN, POLAND</text>
+              <text x="8" y="65" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#8a6a1f">2024–2026</text>
+              <circle cx="122" cy="46" r="3" fill="#123f33" />
+            </g>
+
+            <g>
+              <circle cx="122" cy="212" r="3" fill="#123f33" />
+              <rect x="8" y="192" width="32" height="7.4" fill="#FF9933" />
+              <rect x="8" y="199.4" width="32" height="7.4" fill="#fff" stroke="#c9c4b2" stroke-width=".6" />
+              <rect x="8" y="206.8" width="32" height="7.4" fill="#138808" />
+              <circle cx="24" cy="203" r="3.1" fill="none" stroke="#054187" stroke-width="1" />
+              <text x="8" y="230" font-family="IBM Plex Mono,monospace" font-size="10" fill="#57604f">DELHI, INDIA</text>
+              <text x="8" y="245" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#8a6a1f">2020–2024</text>
+            </g>
+
+            <g>
+              <g transform="scale(1.2)">
+                <path d="M -36 -1.8 L -47 -13.5 L -50.5 -13.5 L -44.5 -2 Z" fill="#e6e3d7" stroke="#8f8b7c"
+                  stroke-width=".55" />
+                <path d="M -36 1.8 L -47 13.5 L -50.5 13.5 L -44.5 2 Z" fill="#e6e3d7" stroke="#8f8b7c"
+                  stroke-width=".55" />
+                <path d="M 6 -4.2 L -14 -35 L -20 -35 L -15 -4.4 Z" fill="#efece2" stroke="#8f8b7c" stroke-width=".6" />
+                <path d="M 6 4.2 L -14 35 L -20 35 L -15 4.4 Z" fill="#efece2" stroke="#8f8b7c" stroke-width=".6" />
+                <path d="M -14 -34.7 L -16.6 -40 L -14.9 -40 L -12.3 -35 Z" fill="#0a2756" />
+                <path d="M -14 34.7 L -16.6 40 L -14.9 40 L -12.3 35 Z" fill="#0a2756" />
+                <line x1="1" y1="-13" x2="1" y2="-10" stroke="#9b978a" stroke-width="1.4" />
+                <line x1="1" y1="13" x2="1" y2="10" stroke="#9b978a" stroke-width="1.4" />
+                <rect x="-3.5" y="-16.4" width="11" height="4.8" rx="2.4" fill="#d9d6cb" stroke="#84806f"
+                  stroke-width=".55" />
+                <rect x="-3.5" y="11.6" width="11" height="4.8" rx="2.4" fill="#d9d6cb" stroke="#84806f"
+                  stroke-width=".55" />
+                <ellipse cx="7.2" cy="-14" rx="1.3" ry="2.4" fill="#2e3338" />
+                <ellipse cx="7.2" cy="14" rx="1.3" ry="2.4" fill="#2e3338" />
+                <path
+                  d="M 50 0 Q 46 -3.4 38 -4.2 L -30 -4.6 Q -42 -4 -45 -2 L -46.5 0 L -45 2 Q -42 4 -30 4.6 L 38 4.2 Q 46 3.4 50 0 Z"
+                  fill="#ffffff" stroke="#84806f" stroke-width=".8" />
+                <line x1="-40" y1="2.9" x2="34" y2="2.9" stroke="#dcd9cc" stroke-width=".6" />
+                <path d="M 41 -2.9 Q 45.6 -1.5 47 0 Q 45.6 1.5 41 2.9 Q 43.6 0 41 -2.9 Z" fill="#1c2a38" />
+                <path d="M 50 0 Q 47.6 -1.9 44.6 -2.9 Q 46.8 -1 46.8 0 Q 46.8 1 44.6 2.9 Q 47.6 1.9 50 0 Z"
+                  fill="#0a2756" />
+                <path d="M -37.5 -1.2 Q -45 -.6 -50 0 Q -45 .6 -37.5 1.2 Q -36.4 0 -37.5 -1.2 Z" fill="#0a2756" />
+                <circle cx="-46.8" cy="0" r="1.3" fill="#d6293a" />
+                <text x="-31" y="2.2" font-family="Arial,sans-serif" font-weight="700" font-size="7" fill="#0a2756"
+                  letter-spacing=".5">LOT.com</text>
+              </g>
+              <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;1;1"
+                keyTimes="0;0.14;0.86;1">
+                <mpath href="#flightpath" />
+              </animateMotion>
+            </g>
+          </svg></div>
+
+        <div class="edu-stops">
+          <div class="edu-stop">
+            <h3 style="font-family:'Fraunces',serif;font-size:21px;font-weight:500">MSc Quantitative Finance</h3>
+            <p class="org" style="font-size:14px;font-weight:600;color:var(--green);margin:2px 0 12px">Poznan University
+              of Economics &amp; Business</p>
+            <ul style="list-style:none">
+              <li style="font-size:14.5px;color:var(--soft);padding-left:20px;position:relative;margin-bottom:8px"><span
+                  style="position:absolute;left:0;color:var(--green)">•</span>Grade <b
+                  style="color:var(--ink)">4.68/5</b> · <b style="color:var(--ink)">Rector's Scholarship (top 10% of
+                  cohort)</b></li>
+              <li class="coursework" style="color:var(--soft);padding-left:20px;position:relative"><span
+                  style="position:absolute;left:0;color:var(--green)">•</span>Relevant coursework: Advanced Derivatives Pricing · Financial Econometrics · Risk Management · Corporate Finance · Asset Pricing</li>
+            </ul>
+          </div>
+          <div class="edu-stop">
+            <h3 style="font-family:'Fraunces',serif;font-size:21px;font-weight:500">B.E. Computer Science</h3>
+            <p class="org" style="font-size:14px;font-weight:600;color:var(--green);margin:2px 0 12px">Chandigarh
+              University</p>
+            <ul style="list-style:none">
+              <li style="font-size:14.5px;color:var(--soft);padding-left:20px;position:relative;margin-bottom:8px"><span
+                  style="position:absolute;left:0;color:var(--green)">•</span>CGPA <b
+                  style="color:var(--ink)">8.51/10</b></li>
+              <li style="font-size:14.5px;color:var(--soft);padding-left:20px;position:relative"><span
+                  style="position:absolute;left:0;color:var(--green)">•</span>Machine Learning · Algorithms &amp; Data
+                Structures · Python · SQL · Software Engineering</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="skillrow">
+        <span class="sl">Technical</span>
+        <div class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span
+            class="chip">Power BI</span><span class="chip">Excel / VBA</span><span class="chip">Git</span></div>
+      </div>
+      <div class="skillrow">
+        <span class="sl">Risk &amp; Quant</span>
+        <div class="chips"><span class="chip">CVA / Counterparty Risk</span><span class="chip">GARCH /
+            Volatility</span><span class="chip">VaR &amp; Backtesting</span><span class="chip">Monte Carlo</span><span
+            class="chip">Derivatives Pricing</span></div>
+      </div>
+      <div class="skillrow">
+        <span class="sl">Finance</span>
+        <div class="chips"><span class="chip">Financial Modeling</span><span class="chip">DCF / WACC</span><span
+            class="chip">Budgeting &amp; Forecasting</span><span class="chip">Statement Analysis</span></div>
+      </div>
+      <div class="skillrow">
+        <span class="sl">Languages</span>
+        <div class="chips"><span class="chip">English (professional)</span><span class="chip">Hindi (native)</span><span
+            class="chip">German (basic)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <footer id="contact">
+    <div class="foot-in">
+      <h2>Let's talk about <em>risk.</em></h2>
+      <div class="foot-links">
+        <a class="fbtn fbtn-solid" href="mailto:work.gautamprasad@gmail.com">work.gautamprasad@gmail.com</a>
+        <a class="fbtn fbtn-line" href="https://linkedin.com/in/gautamprasadwork" target="_blank"
+          rel="noreferrer">LinkedIn</a>
+        <a class="fbtn fbtn-line" href="https://github.com/gautamprasadwork" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="fbtn fbtn-line" href="cv.pdf" download>CV ↓</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
+
 </html>
