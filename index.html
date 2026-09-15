@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gautam Prasad · Quantitative Risk &amp; Financial Analytics</title>
+<meta content="Quantitative risk and financial analytics: counterparty credit risk (CVA), volatility modelling, derivatives pricing, equity valuation. Python · R · SQL · Power BI." name="description"/>
+<meta content="Gautam Prasad · Quantitative Risk &amp; Financial Analytics" property="og:title"/>
+<meta content="Finance is full of uncertainty. I measure it. CVA · GARCH · Monte Carlo · DCF: reproducible models, MSc Quantitative Finance." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://gautamprasadwork.github.io/Portfolio/" property="og:url"/>
+<meta content="https://gautamprasadwork.github.io/Portfolio/og.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<link href="https://gautamprasadwork.github.io/Portfolio/" rel="canonical"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Gautam Prasad · Risk &amp; Quantitative Analytics" name="twitter:title"/>
+<meta content="Credit risk, volatility modelling, derivatives pricing, and valuation projects." name="twitter:description"/>
+<meta content="https://gautamprasadwork.github.io/Portfolio/og.png" name="twitter:image"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230060fe'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23ffffff' text-anchor='middle'%3EGP%3C/text%3E%3Ccircle cx='50' cy='46' r='4' fill='%23a9d6bf'/%3E%3C/svg%3E" rel="icon"/>
+<style>
+:root{--blue:#0060fe;--blue-dark:#0051d9;--green:#1f7a55;--green-dark:#176344;--ink:#0b1220;--soft:#51627b;--muted:#7b8aa2;--line:#dfe7f2;--card:#f4f8fe;--chip:#eef5ff;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--ink);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;text-align:justify}a{color:inherit;text-decoration:none}::selection{background:#dce9ff}
+.wrap,.foot-in{width:1344px;max-width:calc(100% - 144px);margin-left:72px;margin-right:0}
+nav{height:58px;border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:50}.nav-in{height:58px;position:relative}.logo{position:absolute;left:0;top:13px;font-size:27px;font-weight:800;letter-spacing:-2.1px;color:#0b1220}.logo em{font-style:normal;color:var(--blue)}.nav-r{position:absolute;right:0;top:9px;height:40px;display:flex;align-items:center}.nav-r a{font-size:13px;font-weight:500;color:#111c31;margin-left:31px;position:relative;padding:10px 0 8px;transition:color .18s ease}.nav-r a:not(.nav-cv):after{content:'';position:absolute;left:0;right:0;bottom:2px;height:2px;background:transparent;border-radius:2px;transform:scaleX(.35);transform-origin:center;transition:background .18s ease,transform .18s ease}.nav-r a:not(.nav-cv):hover{color:var(--blue)}.nav-r a:not(.nav-cv).active{color:var(--blue);font-weight:600}.nav-r a:not(.nav-cv).active:after{background:var(--blue);transform:scaleX(1)}.nav-r .nav-primary{color:#111c31}.nav-cv{display:flex!important;align-items:center;justify-content:center;width:183px;height:40px;margin-left:31px!important;background:var(--blue);color:#fff!important;border-radius:8px;font-weight:600;box-shadow:0 5px 13px rgba(0,96,254,.15)}
+.hero{height:377px;border-bottom:1px solid var(--line);padding:0}.hero-grid{height:376px;position:relative}.hero .wrap{width:1438px;max-width:calc(100% - 144px)}.hero-copy{position:absolute;left:0;top:38px;width:820px}.hero-media{position:absolute;left:830px;top:39px;width:280px}.hero-contact{position:absolute;left:1165px;top:47px;width:248px}
+h1{font-size:60px;line-height:.98;letter-spacing:-3.7px;font-weight:800;margin-bottom:7px;white-space:nowrap}.name-first{color:#0b1220}.name-last{color:var(--blue)}.hero-title{font-size:25px;line-height:1.18;font-weight:700;letter-spacing:-.6px;margin-bottom:8px;white-space:nowrap}.hero-subtitle{font-size:15px;color:var(--soft);line-height:1.45;margin-bottom:15px;white-space:nowrap}.lede{width:740px;font-size:15.5px;line-height:1.5;color:#33425b;margin-bottom:16px}.lede b{color:var(--ink);font-weight:600}.toolline{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--blue);margin-bottom:17px}.toolline span{background:var(--chip);border:1px solid #dce9f8;border-radius:6px;padding:5px 11px}.cta-row{display:flex;align-items:center;flex-wrap:nowrap;gap:13px}.cta{height:40px;padding:0 20px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:600}.cta-dark{width:184px;background:var(--blue);color:#fff}.cta-line{width:171px;background:#fff;border:1px solid #bcd4f8;color:var(--blue)}.hero-social{display:flex;align-items:center;gap:18px;margin-left:12px;font-size:13.5px;color:#21314d;white-space:nowrap}.hero-social a:hover{color:var(--blue)}.social-icon-link{display:inline-flex;align-items:center;gap:7px}.social-icon-link svg{width:19px;height:19px;display:block}.linkedin-mark{width:19px;height:19px;display:inline-flex;align-items:center;justify-content:center;border-radius:3px;background:var(--blue);color:#fff;font-size:11px;line-height:1;font-weight:800;letter-spacing:-.4px}
+.portrait img,.portrait .fallback{width:280px;height:306px;border-radius:9px;display:block}.portrait img{object-fit:cover;object-position:50% 20%;filter:none}.portrait .fallback{display:none;background:var(--blue);color:#fff;align-items:center;justify-content:center;font-size:64px;font-weight:800}
+.contact-item{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#0b1220;line-height:1.4;margin-bottom:18px}.contact-icon{width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--blue);flex:0 0 22px}.contact-icon svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:2}.contact-divider{height:1px;background:var(--line);margin:22px 0}.hero-quote{font-size:14px;line-height:1.7;font-style:italic;color:var(--soft)}.hero-quote:after{content:'';display:block;width:48px;height:3px;background:var(--blue);margin-top:14px}
+section{padding:0;scroll-margin-top:74px}footer{scroll-margin-top:74px}.snapshot-section{height:183px;padding-top:12px;border-bottom:1px solid var(--line)}.sec-top{height:35px;display:flex;align-items:flex-start;justify-content:space-between}.sec-top h2{font-size:24px;line-height:1.2;letter-spacing:-.6px;font-weight:700}.section-note{font-size:13px;color:var(--blue)}.snapshot-grid{height:114px;white-space:nowrap}.snap-item{display:inline-block;vertical-align:top;width:322px;height:114px;margin-right:18px;white-space:normal;background:var(--card);border:1px solid #e4edf8;border-radius:9px;padding:15px}.snap-item:last-child{margin-right:0}.snap-icon{float:left;width:42px;color:var(--blue);padding-top:1px}.snap-icon svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:2}.snap-text{margin-left:42px}.snap-item strong{display:block;font-size:14.5px;line-height:1.32;margin-bottom:5px}.snap-item span{display:block;font-size:12.7px;line-height:1.43;color:var(--soft)}.snap-item small{display:block;font-size:11.2px;line-height:1.38;color:#51627b;margin-top:7px}.snap-item small b{color:var(--ink)}
+#experience{padding-top:0;padding-bottom:14px}.xp-wrap{height:auto}.xp-row{display:grid;grid-template-columns:170px minmax(0,1fr);min-height:0;padding-top:10px}.xp-when{position:relative;left:auto;top:auto;width:auto;font-size:13px;color:var(--soft);line-height:1.55;padding-top:1px}.xp-body{position:relative;left:auto;top:auto;width:auto;min-height:0;border-left:2px solid #dce8f8;padding:0 0 2px 34px}.xp-body:before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--blue)}.xp-body h3{font-size:19px;line-height:1.25;font-weight:700}.xp-body .org{font-size:13.5px;color:#0b1220;margin:1px 0 11px}.xp-body ul{list-style:disc;margin:0;padding-left:18px}.xp-body li{display:list-item;width:auto;padding-right:0;font-size:13.3px;line-height:1.45;color:#4c5b73;position:relative;margin-bottom:5px}.xp-body li::marker{color:var(--blue)}.xp-body li{padding-left:0}.xp-body li b{color:var(--ink);font-weight:600}
+#work{padding-top:10px}.work-wrap{}.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.pitem{display:block;vertical-align:top;width:auto;min-height:174px;margin:0;padding:15px 16px 16px;border:1px solid #dce8f8;border-radius:9px;background:#fff}.featured-project{background:#f7fbff}.project-kicker{font-size:11px;line-height:1.2;letter-spacing:.03em;color:var(--blue);font-weight:600;margin-bottom:7px}.pitem h3{font-size:16.5px;line-height:1.28;font-weight:700;margin-bottom:7px}.project-link{font-size:11px;color:var(--blue);font-weight:600;margin-left:7px}.pline{font-size:12.7px;line-height:1.48;color:#51627b}.project-facts{display:flex;flex-wrap:wrap;gap:5px 7px;margin-top:9px;font-size:10.7px}.project-facts span{background:#eef4fb;color:#324765;border-radius:5px;padding:3px 7px}.project-detail{font-size:12px!important;line-height:1.48!important;color:var(--soft)!important;margin-top:7px}
+#extras,#research,#education{padding-top:21px}.xhead{display:flex;justify-content:space-between;gap:10px}.xwhen{font-size:11px;color:var(--muted)}.rmore{margin-top:8px}.ptagline{font-size:13px;color:var(--blue);font-weight:500;margin-top:8px}#extras,#research,#education{padding-top:21px}.xhead{display:flex;justify-content:space-between;gap:10px}.xwhen{font-size:11px;color:var(--muted)}.rmore{margin-top:8px}.ptagline{font-size:13px;color:var(--blue);font-weight:500;margin-top:8px}
+.edu-reference{border-top:2px solid #1c2633;padding-top:28px}
+.edu-upper{display:grid;grid-template-columns:250px minmax(0,1fr);column-gap:30px;align-items:stretch}
+.edu-journey{position:relative;min-height:360px;padding:4px 10px 0 0}
+.edu-stop{position:absolute;left:0;width:165px;color:var(--soft);font-size:10.5px;line-height:1.25;letter-spacing:.01em}
+.edu-stop.top{top:8px}.edu-stop.bottom{bottom:8px}
+.flag{width:44px;height:28px;border:1px solid #d7dde6;border-radius:2px;margin-bottom:8px;position:relative;overflow:hidden;background:#fff}
+.flag-poland:before{content:'';display:block;height:50%;background:#fff}.flag-poland:after{content:'';display:block;height:50%;background:#df1d3d}
+.flag-india{background:linear-gradient(to bottom,#ff9933 0 33.3%,#fff 33.3% 66.6%,#138808 66.6%)}
+.flag-india:after{content:'';position:absolute;left:50%;top:50%;width:7px;height:7px;border:1px solid #1b4f9b;border-radius:50%;transform:translate(-50%,-50%)}
+.edu-stop strong{display:block;font-size:11px;letter-spacing:.08em;color:var(--soft);font-weight:500}.edu-stop span{display:block;margin-top:4px;color:#a57a1a;font-size:11px;letter-spacing:.02em}
+.edu-route{position:absolute;left:126px;top:52px;bottom:52px;width:86px}
+.edu-route:before{content:'';position:absolute;left:42px;top:0;bottom:0;border-left:1px dashed #aebfd5}
+.edu-route:after{content:'';position:absolute;left:35px;top:0;bottom:0;width:14px;background:linear-gradient(to bottom,transparent,rgba(0,96,254,.035),transparent);pointer-events:none}
+.route-dot{position:absolute;left:38px;width:9px;height:9px;border-radius:50%;background:#163b4a;z-index:1}.route-dot.top{top:0}.route-dot.bottom{bottom:0}
+.edu-plane{position:absolute;left:42px;top:88%;width:38px;height:126px;transform:translate(-50%,-50%);animation:eduFlight 6.5s ease-in-out infinite;filter:drop-shadow(0 2px 3px rgba(0,96,254,.10));z-index:2}
+.edu-plane svg{width:38px;height:126px;display:block}.edu-plane text{font-family:Arial,Helvetica,sans-serif}
+@keyframes eduFlight{0%{top:88%}45%{top:46%}100%{top:8%}}
+.edu-details{padding:0 0 4px}.edu-record{padding:0 0 18px;margin:0 0 20px;border-bottom:1px solid #edf1f6}.edu-record:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+.edu-degree{font-size:21px;line-height:1.16;letter-spacing:-.4px;font-weight:700;margin-bottom:5px;color:#1a1f27}.edu-org{font-size:14px;line-height:1.25;color:var(--blue);font-weight:700;margin-bottom:9px}.edu-bullet{position:relative;padding-left:20px;margin:0 0 8px;font-size:13.2px;line-height:1.45;color:#606a78}.edu-bullet:before{content:'•';position:absolute;left:1px;top:0;color:var(--blue);font-size:18px;line-height:1}.edu-bullet b{color:#1a1f27}.edu-bullet:last-child{margin-bottom:0}
+.skill-reference{margin-top:24px}.skill-row{display:grid;grid-template-columns:180px minmax(0,1fr);column-gap:24px;align-items:center;padding:13px 0;border-bottom:1px dotted #d6dbe4}.skill-row:first-child{border-top:1px solid #edf1f6}.skill-label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#8f99a7;font-weight:600}.skill-row .chips{display:flex;flex-wrap:wrap;gap:5px 12px;align-items:center}.skill-row .chip{padding:0;border:0;background:transparent;border-radius:0;font-size:13.2px;line-height:1.35;color:#234b8a;white-space:nowrap}.skill-row .chip:not(:last-child)::after{content:'·';color:#a9b4c4;margin-left:12px}.skill-row .chip.lang{color:#234b8a}
+#education .sec-top{margin-bottom:18px}.education-note{display:none}
+@media(max-width:900px){.edu-upper{grid-template-columns:1fr;row-gap:22px}.edu-journey{min-height:180px;padding-right:0}.edu-stop{position:absolute}.edu-stop.top{top:0}.edu-stop.bottom{bottom:0}.edu-route{left:50%;top:30px;bottom:30px;transform:translateX(-50%)}.edu-details{padding-top:0}.skill-row{grid-template-columns:1fr;row-gap:10px}.skill-label{margin-bottom:2px}}
+@media(max-width:600px){.edu-reference{padding-top:20px}.edu-journey{min-height:160px}.edu-route{left:50%;}.edu-stop{width:125px}.edu-plane{position:absolute;left:40px;top:88%;width:30px;height:104px;transform:translate(-50%,-50%);animation:eduFlight 6.5s ease-in-out infinite;filter:drop-shadow(0 2px 3px rgba(0,96,254,.10));z-index:2}.edu-plane svg{width:30px;height:104px;display:block}.edu-degree{font-size:22px}.edu-org{font-size:15px}.edu-bullet{font-size:13.5px}.skill-row .chips{gap:7px}.skill-row .chip{font-size:12px;padding:6px 11px}}
+/* Keep the same blue accent throughout the page; reserve green for the closing footer only. */
+#work, #extras, #research, #education{--section-accent:var(--blue);--section-accent-dark:var(--blue-dark);--section-card:var(--card);--section-chip:var(--chip)}
+#work .section-note,#extras .section-note,#research .section-note,#education .section-note{color:var(--blue)}
+#work .pitem{border-color:#dce8f8}
+#work .featured-project{background:#f7fbff}
+#work .project-kicker,#work .project-link,#extras .project-kicker,#extras .ptagline,#research .project-kicker{color:var(--blue)}
+#work .project-facts span{background:#eef4fb;color:#324765;border-color:#dce8f8}
+#extras .ptagline{color:var(--blue)}
+#research .project-kicker{color:var(--blue)}
+#education .edu-line{background:#dce8f8}
+#education .edu-dot{background:var(--blue)}
+#education .edu-stop .org{color:var(--blue)}
+#education .chip{color:#143e8e;background:#f1f6ff;border-color:#d9e7fb}
+#education .edu-plane svg{width:38px;height:126px;display:block}
+footer{background:var(--green);color:#fff;margin-top:10px}.foot-in{height:112px;padding:0;position:relative}.foot-in h2{position:absolute;left:0;top:35px;font-size:25px;line-height:1.2;font-weight:700}.foot-in h2 em{font-style:italic;color:#dce9ff}.foot-links{position:absolute;right:0;top:31px;white-space:nowrap}.fbtn{display:inline-block;padding:9px 16px;margin-left:10px;border-radius:8px;font-size:13px;font-weight:600}.fbtn-solid{background:#fff;color:#0b1220}.fbtn-line{border:1px solid rgba(255,255,255,.38);color:#fff}
+
+.after-projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}.after-projects-grid section{min-width:0}.after-projects-grid .wrap{width:auto;max-width:none;margin:0}.after-projects-grid .pitem{width:auto;margin:0}.after-projects-grid .sec-top{height:auto;margin-bottom:10px}
+/* Content alignment: justify substantial text, while keeping headings, labels and controls left-aligned for clean scanning. */
+.hero-subtitle,.lede,.pline,.project-detail,.xp-body li,.snap-item span,.snap-item small,.edu-stop li,.hero-quote,.rmore .pline{text-align:justify;text-justify:inter-word}
+h1,.hero-title,.toolline,.cta-row,.sec-top,.sec-top h2,.section-note,.project-kicker,.pitem h3,.xhead,.xwhen,.ptagline,.skillrow,.sl,.chips,.contact-item,.hero-social,.nav-r,.foot-links,.foot-in h2{text-align:left}
+@media(max-width:1450px) and (min-width:1001px){.wrap,.foot-in{width:calc(100% - 96px);max-width:none;margin-left:48px}.hero{height:350px}.hero-grid{height:349px}.hero-copy{width:calc(100% - 472px)}.hero-media{left:calc(100% - 492px);width:220px}.hero-contact{left:calc(100% - 250px);width:230px}.portrait img,.portrait .fallback{width:220px;height:278px}h1{font-size:54px}.hero-title{font-size:22px}.hero-subtitle{font-size:14px}.lede{width:100%;font-size:14.5px}.snapshot-section{height:auto;padding-bottom:21px}.snap-item{width:calc((100% - 36px)/4)}.xp-body{width:calc(100% - 170px)}.pitem{width:auto}}
+@media(max-width:1000px) and (min-width:761px){.wrap,.foot-in{width:calc(100% - 48px);max-width:none;margin-left:24px}.hero{height:auto}.hero-grid{height:auto;min-height:345px}.hero-copy{position:relative;left:auto;top:auto;width:calc(100% - 421px);display:inline-block;vertical-align:top;padding-top:30px;margin-right:18px}.hero-media{position:relative;left:auto;top:auto;width:185px;display:inline-block;vertical-align:top;padding-top:30px;margin-right:18px}.hero-contact{position:relative;left:auto;top:auto;width:195px;display:inline-block;vertical-align:top;padding-top:35px}.portrait img,.portrait .fallback{width:185px;height:230px}h1{font-size:43px;letter-spacing:-2px}.hero-title{font-size:18px}.hero-subtitle{font-size:12px}.lede{width:auto;font-size:13px}.contact-item{font-size:11px}.hero-quote{font-size:11px}.pitem{width:auto;margin:0}}
+@media(max-width:760px){.wrap,.foot-in{width:auto;max-width:none;margin:0;padding-left:20px;padding-right:20px}.nav-in{height:56px}.logo{top:13px}.nav-r a:not(.nav-cv){display:none}.nav-r{right:20px}.nav-cv{width:auto;height:36px;padding:0 15px;margin-left:0!important}.hero{height:auto;padding:28px 0 30px}.hero-grid{height:auto}.hero-copy,.hero-media,.hero-contact{position:relative;left:auto;top:auto;width:auto;display:block;padding-top:0;margin:0}.hero-media{margin:0 0 20px}.hero-contact{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}h1{font-size:45px;letter-spacing:-2.4px;white-space:normal}.hero-title{font-size:21px;white-space:normal}.hero-subtitle{font-size:13.5px;white-space:normal}.lede{width:auto;font-size:14.2px}.cta-row{flex-wrap:wrap}.snapshot-section{height:auto;padding-bottom:12px}.snapshot-grid{white-space:normal}.snap-item{width:100%;margin:0 0 10px}.xp-row{display:block}.xp-when,.xp-body{position:relative;left:auto;top:auto;width:auto}.xp-body{margin-top:12px}.xp-body ul{display:block}.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.pitem{width:100%;margin:0 0 10px}.sec-top h2{font-size:22px}}
+/* Education & skills refinement */
+#education .sec-top h2{white-space:nowrap}
+#education .edu-flight{margin-bottom:16px}
+#education .edu-skills-grid{grid-template-columns:1fr;gap:22px}
+#education .edu-panel,#education .skills-panel{background:#fff;border:1px solid #e3edf8;border-radius:9px;padding:14px 16px 15px;border-top:3px solid var(--blue)}
+#education .mini-label{margin-bottom:11px}
+#education .edu-item{grid-template-columns:86px 1fr;padding:0 0 14px;margin-bottom:14px}
+#education .edu-item:last-child{padding-bottom:0;margin-bottom:0}
+#education .skill-groups{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#education .skill-group{min-height:78px;padding:11px 12px;background:#f7fbff}
+#education .skill-group h4{font-size:12px;margin-bottom:7px}
+#education .chip{font-size:10.5px;padding:4px 7px}
+@media(max-width:900px){.edu-skills-grid{grid-template-columns:1fr}.skill-groups{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){#education .sec-top h2{white-space:normal}.edu-flight{grid-template-columns:68px 1fr 68px;gap:10px}.flight-route{height:50px}.flight-plane{width:82px;height:38px}.flight-plane svg{width:82px;height:38px}.edu-skills-grid{grid-template-columns:1fr}.edu-item{grid-template-columns:72px 1fr}.skill-groups{grid-template-columns:1fr}.skill-row{grid-template-columns:1fr;gap:7px}.skill-row .chips{gap:4px 12px}.skill-row .chip{white-space:normal}.edu-plane{width:46px;height:112px;left:40px;transform:translate(-50%,-50%)}}
+/* Final education / skills visual overrides */
+#education .edu-reference{padding-top:20px}
+#education .edu-upper{grid-template-columns:225px minmax(0,1fr);column-gap:26px}
+#education .edu-journey{min-height:318px}
+#education .edu-degree{font-size:20px;line-height:1.16}
+#education .edu-org{font-size:13.5px;margin-bottom:8px}
+#education .edu-bullet{font-size:12.6px;line-height:1.42;margin-bottom:7px;padding-left:18px}
+#education .edu-bullet:before{font-size:16px}
+#education .skill-reference{margin-top:20px}
+#education .skill-row{grid-template-columns:165px minmax(0,1fr);column-gap:22px;padding:12px 0;border-bottom:1px dotted #d6dbe4}
+#education .skill-row:first-child{border-top:1px solid #edf1f6}
+#education .skill-label{font-size:10.5px;letter-spacing:.14em;color:#8d98a8}
+#education .skill-row .chips{gap:4px 0;display:block}
+#education .skill-row .chip{display:inline;font-size:12.6px;line-height:1.45;color:#234b8a;background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;white-space:normal}
+#education .skill-row .chip:not(:last-child)::after{content:' · ';color:#a9b4c4;margin:0}
+#education .edu-route{left:122px;width:82px}
+#education .edu-route:before{left:40px;border-left:1px dashed #b8c8dc}
+#education .route-dot{left:36px;width:9px;height:9px}
+#education .edu-plane{left:40px;width:54px;height:132px;transform:translate(-50%,-50%)}
+#education .edu-plane svg{width:54px;height:132px}
+@media(max-width:900px){#education .edu-upper{grid-template-columns:1fr;row-gap:18px}#education .edu-journey{min-height:180px}#education .edu-route{left:50%;top:30px;bottom:30px;transform:translateX(-50%)}#education .skill-row{grid-template-columns:1fr;row-gap:7px}#education .skill-row .chips{display:block}}
+@media(max-width:600px){#education .edu-degree{font-size:20px}#education .edu-org{font-size:13.5px}#education .edu-bullet{font-size:13px}#education .skill-row .chip{font-size:12px}.skill-row .chip{padding:0!important;background:transparent!important;border:0!important}}
+@media print{@page{size:A3 landscape;margin:10mm}nav{position:static}.wrap,.foot-in{width:auto;max-width:none;margin-left:0;margin-right:0}.hero .wrap{width:auto;max-width:none}.hero-copy{width:calc(100% - 430px)}.hero-media{left:calc(100% - 430px);width:190px}.hero-contact{left:calc(100% - 210px);width:195px}.portrait img,.portrait .fallback{width:190px;height:235px}h1{font-size:48px}.hero-title{font-size:21px}.lede{width:auto;font-size:14px}.snapshot-grid{display:grid;grid-template-columns:repeat(4,1fr);height:auto;gap:12px}.snap-item{width:auto;margin:0}.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.after-projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head>
+<body id="top">
+<nav><div class="wrap nav-in"><a aria-label="Gautam Prasad home" class="logo" href="#top"><span>G</span><em>P</em></a><div class="nav-r"><a data-nav-target="experience" href="#experience">Experience</a><a data-nav-target="work" href="#work">Projects</a><a data-nav-target="research" href="#research">Research</a><a data-nav-target="education" href="#education">Education</a><a data-nav-target="contact" href="#contact">Contact</a><a class="nav-cv" download="" href="cv.pdf">Download CV</a></div></div></nav>
+<header class="hero"><div class="wrap hero-grid">
+<div class="hero-copy">
+<h1><span class="name-first">Gautam</span> <span class="name-last">Prasad</span></h1>
+<p class="hero-title">Quantitative Risk &amp; Financial Analytics</p>
+<p class="hero-subtitle">MSc Quantitative Finance  ·  Finance Analyst  ·  B.E. Computer Science</p>
+<p class="lede">Quantitative finance professional with hands-on experience in <b>financial analysis, reporting,</b><br/>data analytics, and <b>applied quantitative risk modelling</b>. I use <b>Python, R, SQL, Excel,</b><br/>and <b>Power BI</b> to analyse financial data and turn results into clear, decision-ready insights.</p>
+<div class="toolline"><span>Python</span><span>R</span><span>SQL</span><span>Excel</span><span>Power BI</span></div>
+<div class="cta-row"><a class="cta cta-dark" href="#work">View Projects  →</a><a class="cta cta-line" download="" href="cv.pdf">Download CV  ↓</a><div class="hero-social"><a aria-label="GitHub" class="social-icon-link" href="https://github.com/gautamprasadwork" rel="noreferrer" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.57v-2.01c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.23 1.84 1.23 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.53.12-3.18 0 0 1-.32 3.3 1.23a11.48 11.48 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.65 1.65.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.62-2.81 5.64-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .7Z"/></svg><span>GitHub</span></a><a aria-label="LinkedIn" class="social-icon-link" href="https://linkedin.com/in/gautamprasadwork" rel="noreferrer" target="_blank"><span class="linkedin-mark" aria-hidden="true">in</span><span>LinkedIn</span></a></div></div>
+</div>
+<div class="hero-media"><div class="portrait"><img alt="Gautam Prasad" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='photo.png'}else{this.style.display='none';this.nextElementSibling.style.display='flex'}" src="photo-portrait.png"/><div class="fallback">GP</div></div></div>
+<aside aria-label="Contact information" class="hero-contact">
+<div class="contact-item"><span class="contact-icon"><svg viewbox="0 0 24 24"><path d="M12 21s7-6.2 7-12A7 7 0 0 0 5 9c0 5.8 7 12 7 12Z"></path><circle cx="12" cy="9" r="2.4"></circle></svg></span><div><div>Bengaluru, India</div><div style="color:var(--soft);margin-top:2px">Open to opportunities</div></div></div>
+<div class="contact-item"><span class="contact-icon"><svg viewbox="0 0 24 24"><rect height="14" rx="1.5" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></span><a href="mailto:work.gautamprasad@gmail.com">work.gautamprasad@gmail.com</a></div>
+<div class="contact-item"><span class="contact-icon" style="font-weight:800;font-size:16px">in</span><a href="https://linkedin.com/in/gautamprasadwork" rel="noreferrer" target="_blank">linkedin.com/in/gautamprasadwork</a></div>
+<div class="contact-divider"></div><p class="hero-quote">“Using data, models and analysis to solve real-world financial problems.”</p>
+</aside>
+</div></header>
+<section class="snapshot-section" id="snapshot"><div class="wrap"><div class="sec-top"><h2>At a glance</h2></div><div class="snapshot-grid">
+<div class="snap-item"><div class="snap-icon"><svg viewbox="0 0 32 32"><path d="M4 10 16 4l12 6-12 6L4 10Z"></path><path d="M9 13v7c0 2 3 4 7 4s7-2 7-4v-7"></path></svg></div><div><strong>MSc Quantitative Finance</strong><span>Poznań University of Economics &amp; Business</span><small>GPA <b>4.68/5</b>  |  Top 10% (Rector’s Scholarship)</small></div></div>
+<div class="snap-item"><div class="snap-icon"><svg viewbox="0 0 32 32"><rect height="16" rx="1.5" width="22" x="5" y="6"></rect><path d="M12 27h8M16 22v5"></path></svg></div><div><strong>B.E. Computer Science</strong><span>Chandigarh University</span><small>CGPA <b>8.51/10</b></small></div></div>
+<div class="snap-item"><div class="snap-icon"><svg viewbox="0 0 32 32"><rect height="17" rx="2" width="22" x="5" y="10"></rect><path d="M11 10V7h10v3M12 16h8"></path></svg></div><div><strong>Finance Analyst</strong><span>All For Expo  ·  Sep 2025 – Feb 2026</span><small><b>500+ invoices/month</b>  ·  KPI reporting</small></div></div>
+<div class="snap-item"><div class="snap-icon"><svg viewbox="0 0 32 32"><path d="M5 26V16M12 26V10M19 26V13M26 26V5"></path><path d="M3 26h26"></path></svg></div><div><strong>Key Skills</strong><span>Python  ·  R  ·  SQL  ·  Excel  ·  Power BI</span><small>CVA  ·  GARCH  ·  Monte Carlo  ·  Financial Modelling</small></div></div>
+</div></div></section>
+<section id="experience"><div class="wrap"><div class="sec-top"><h2>Experience</h2><a class="section-note" href="#experience">View full experience  →</a></div><div class="xp-row"><div class="xp-when">Sep 2025 – Feb 2026<br/>(6 months)<br/>Poznan, Poland</div><div class="xp-body"><h3>Finance Analyst</h3><p class="org">All For Expo</p><ul>
+<li>Developed <b>KPI dashboards in Power BI</b> to improve visibility into project performance and financial metrics.</li><li>Automated reporting and data validation processes in <b>Excel</b>, improving efficiency and accuracy.</li><li>Analyzed <b>project expenses</b> and prepared monthly reports to support budgeting and management decisions.</li><li>Processed and reconciled <b>500+ vendor and employee invoices</b> monthly, ensuring accuracy and compliance.</li><li>Collaborated with <b>40+ vendors</b> and internal stakeholders to resolve payment, documentation, and operational issues.</li><li>Maintained regular communication with clients and business partners across <b>USA, Dubai, and Europe</b>.</li>
+</ul></div></div></div></section>
+<section id="work"><div class="wrap"><div class="sec-top"><h2>Selected Projects</h2><a class="section-note" href="#work">View all projects  →</a></div><div class="projects-grid">
+<div class="pitem featured-project"><div class="project-kicker">01   MSc THESIS / MARKET RISK</div><h3>Hybrid GARCH–LSTM Volatility Forecasting</h3><div class="project-facts"><span>Time Series</span><span>GARCH</span><span>LSTM</span><span>Python</span></div><p class="pline">Applied and compared GARCH, LSTM, and Hybrid GARCH–LSTM models to forecast equity market volatility across developed and emerging markets.</p><p class="project-detail">Germany · USA · India · Poland  |  2015–July 2026</p></div>
+<div class="pitem featured-project"><div class="project-kicker">02   CREDIT RISK</div><h3><a href="https://gautamprasadwork.github.io/cva-counterparty-credit-risk/" rel="noreferrer" target="_blank">Counterparty Credit Risk: CVA Pricing</a><span class="project-link">Project ↗</span></h3><div class="project-facts"><span>CVA</span><span>Monte Carlo</span><span>Derivatives</span><span>Python</span></div><p class="pline">Built a Monte Carlo framework to price CVA for an OTC derivatives portfolio, combining simulated market exposure, CDS-implied default probabilities and discounting.</p><p class="project-detail">10,000 market paths · 3-year horizon · 10,485 PLN CVA</p></div>
+<div class="pitem featured-project"><div class="project-kicker">03   DERIVATIVES PRICING</div><h3><a href="https://asianoptionprice.streamlit.app/" rel="noreferrer" target="_blank">Exotic Asian Option Pricing: Monte Carlo</a><span class="project-link">Live Project ↗</span></h3><div class="project-facts"><span>Monte Carlo</span><span>Asian Options</span><span>Python</span><span>Streamlit</span></div><p class="pline">Priced arithmetic-average Asian options using Monte Carlo simulation, with geometric-average pricing available as a comparison.</p><p class="project-detail">Call · Put  |  Configurable simulation paths</p></div>
+<div class="pitem"><div class="project-kicker">04   CREDIT RISK / MACHINE LEARNING</div><h3><a href="https://github.com/gautamprasadwork/corporate-default-prediction" rel="noreferrer" target="_blank">Corporate Bankruptcy Prediction</a><span class="project-link">GitHub ↗</span></h3><div class="project-facts"><span>Credit Risk</span><span>Financial Statements</span><span>Classification</span><span>ML</span></div><p class="pline">Used financial-statement information to investigate whether machine-learning classification methods can identify companies at risk of bankruptcy.</p></div>
+<div class="pitem"><div class="project-kicker">05   CORPORATE FINANCE</div><h3><a href="https://github.com/gautamprasadwork/equity-valuation" rel="noreferrer" target="_blank">Company Valuation: ORLEN Group</a><span class="project-link">GitHub ↗</span></h3><div class="project-facts"><span>DCF</span><span>WACC</span><span>Forecasting</span><span>Sensitivity</span></div><p class="pline">Performed a discounted cash flow valuation using free-cash-flow forecasts, WACC and capital structure analysis, supported by scenario and sensitivity analysis.</p></div>
+<div class="pitem"><div class="project-kicker">06   FINANCIAL ANALYSIS</div><h3>Financial Analysis &amp; Equity Research: Lockheed Martin</h3><div class="project-facts"><span>Statement Analysis</span><span>KPI Analysis</span><span>Dashboarding</span></div><p class="pline">Analyzed three years of financial statements and key performance indicators to assess profitability, liquidity, leverage and operational efficiency.</p></div>
+</div></div></section>
+<div class="after-projects-grid">
+<section id="extras"><div class="wrap"><div class="sec-top"><h2>Additional Activities</h2></div>
+<div class="pitem"><div class="xhead"><h3>Changemakers: Innovation &amp; Human-AI Collaboration Program (Poland &amp; Finland) ↗</h3><span class="xwhen">MAR 2026</span></div><p class="pline" style="margin-top:6px">SENSE Consulting · EU-funded Polish-Finnish exchange</p><div class="rmore"><p class="pline">Selected for a competitive EU-funded program bringing together 30 students from Poland, Finland, Spain, and India to develop social-innovation solutions using human-centred design and lean-startup methodology.</p><p class="ptagline">Design Thinking, Innovation Management, Human-AI Collaboration</p></div></div></div></section>
+<section id="research"><div class="wrap"><div class="sec-top"><h2>Research</h2></div>
+<div class="pitem"><div class="project-kicker">RESEARCH</div><h3>A Comparative Study on Conventional Methods and Machine Learning Approaches on Stock Market Prediction</h3><p class="pline">Comparative research examining conventional methods alongside machine-learning approaches for stock-market prediction.</p></div></div></section>
+</div>
+<section id="education"><div class="wrap"><div class="sec-top"><h2>Education &amp; Technical Skills</h2></div>
+<div class="edu-reference">
+  <div class="edu-upper">
+    <div class="edu-journey" aria-label="Education journey from Delhi, India to Poznan, Poland via LOT.com">
+      <div class="edu-stop top"><div class="flag flag-poland" aria-hidden="true"></div><strong>POZNAN, POLAND</strong><span>2024–2026</span></div>
+      <div class="edu-route" aria-hidden="true"><i class="route-dot top"></i><i class="route-dot bottom"></i><div class="edu-plane"><svg viewBox="0 0 60 150" role="img" aria-label="LOT.com commercial aircraft flying from Delhi to Poznan">
+  <g transform="translate(30 75)">
+    <!-- Slim top-view commercial passenger aircraft, styled to match the reference image -->
+    <path d="M0-71 C-2.1-68.3 -2.8-63.2 -2.9-57.2 L-3.6-28.8 -24.3-8.4 C-26.1-6.7 -25.7-4.3 -23.1-3.7 L-4.6-1.2 -4.8 15.5 -16.2 27.2 L-15.8 29.5 -3.2 20.7 0 45.6 3.2 20.7 15.8 29.5 16.2 27.2 4.8 15.5 4.6-1.2 23.1-3.7 C25.7-4.3 26.1-6.7 24.3-8.4 L3.6-28.8 2.9-57.2 C2.8-63.2 2.1-68.3 0-71 Z" fill="#fff" stroke="#7f8790" stroke-width="1.15" stroke-linejoin="round"/>
+    <!-- LOT blue tail/cockpit accents -->
+    <path d="M0-66 C3.2-62.7 3.4-59.8 3.2-56.2 L2.1-53.7 C1.4-57.2 -1.4-57.2 -2.1-53.7 L-3.2-56.2 C-3.4-59.8 -3.2-62.7 0-66 Z" fill="#102e57"/>
+    <path d="M-1.8 40.8 H1.8" stroke="#0b4b9e" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- engines -->
+    <g fill="#ece8de" stroke="#777e86" stroke-width="1">
+      <rect x="-19.7" y="-8.8" width="4.8" height="12.8" rx="2.1"/>
+      <rect x="14.9" y="-8.8" width="4.8" height="12.8" rx="2.1"/>
+    </g>
+    <ellipse cx="-17.3" cy="-8.8" rx="2.45" ry="1.55" fill="#30343a"/>
+    <ellipse cx="17.3" cy="-8.8" rx="2.45" ry="1.55" fill="#30343a"/>
+    <!-- wing and tail accents -->
+    <path d="M-24.0-6.2 L-5.0-1.6 M24.0-6.2 L5.0-1.6" stroke="#a7adb4" stroke-width=".8" stroke-linecap="round"/>
+    <path d="M-1.7 17.2 L-8.9 24.6 M1.7 17.2 L8.9 24.6" stroke="#a7adb4" stroke-width=".8"/>
+    <text x="0" y="8" text-anchor="middle" font-size="5.15" font-family="Arial,Helvetica,sans-serif" font-weight="700" fill="#0d376f" transform="rotate(-90 0 8)">LOT.com</text>
+  </g>
+</svg></div></div>
+      <div class="edu-stop bottom"><div class="flag flag-india" aria-hidden="true"></div><strong>DELHI, INDIA</strong><span style="color:#6e7c8e">2020–2024</span></div>
+    </div>
+    <div class="edu-details">
+      <article class="edu-record">
+        <div class="edu-degree">MSc Quantitative Finance</div>
+        <div class="edu-org">Poznan University of Economics &amp; Business</div>
+        <div class="edu-bullet">Grade <b>4.68/5</b> · <b>Rector's Scholarship (top 10% of cohort)</b></div>
+        <div class="edu-bullet">Relevant coursework: Advanced Derivatives Pricing · Financial Econometrics · Risk Management · Corporate Finance · Asset Pricing</div>
+      </article>
+      <article class="edu-record">
+        <div class="edu-degree">B.E. Computer Science</div>
+        <div class="edu-org">Chandigarh University</div>
+        <div class="edu-bullet">CGPA <b>8.51/10</b></div>
+        <div class="edu-bullet">Machine Learning · Algorithms &amp; Data Structures · Python · SQL · Software Engineering</div>
+      </article>
+    </div>
+  </div>
+  <div class="skill-reference" aria-label="Technical skills">
+    <div class="skill-row"><div class="skill-label">Technical</div><div class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">Excel / VBA</span><span class="chip">Git</span></div></div>
+    <div class="skill-row"><div class="skill-label">Risk &amp; Quant</div><div class="chips"><span class="chip">CVA / Counterparty Risk</span><span class="chip">GARCH / Volatility</span><span class="chip">VaR &amp; Backtesting</span><span class="chip">Monte Carlo</span><span class="chip">Derivatives Pricing</span></div></div>
+    <div class="skill-row"><div class="skill-label">Finance</div><div class="chips"><span class="chip">Financial Modeling</span><span class="chip">DCF / WACC</span><span class="chip">Budgeting &amp; Forecasting</span><span class="chip">Statement Analysis</span></div></div>
+    <div class="skill-row"><div class="skill-label">Languages</div><div class="chips"><span class="chip lang">English (C1)</span><span class="chip lang">Hindi (C2)</span></div></div>
+  </div>
+</div></div></section>
+<footer id="contact"><div class="foot-in"><h2>Let's talk about <em>risk &amp; analytics.</em></h2><div class="foot-links"><a class="fbtn fbtn-solid" href="mailto:work.gautamprasad@gmail.com">work.gautamprasad@gmail.com</a><a class="fbtn fbtn-line" href="https://linkedin.com/in/gautamprasadwork" rel="noreferrer" target="_blank">LinkedIn</a><a class="fbtn fbtn-line" href="https://github.com/gautamprasadwork" rel="noreferrer" target="_blank">GitHub</a><a class="fbtn fbtn-line" download="" href="cv.pdf">CV ↓</a></div></div></footer>
+<script>
+(function(){
+  const navLinks = Array.from(document.querySelectorAll('.nav-r a[data-nav-target]'));
+  const sections = navLinks
+    .map(link => document.getElementById(link.dataset.navTarget))
+    .filter(Boolean);
+  if (!navLinks.length || !sections.length) return;
+
+  function setActive(id){
+    navLinks.forEach(link => {
+      const active = link.dataset.navTarget === id;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  const observers = new Map();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => observers.set(entry.target.id, entry));
+    const visible = sections.filter(section => {
+      const e = observers.get(section.id);
+      return e && e.isIntersecting;
+    });
+    if (!visible.length) return;
+
+    // Prefer the section whose top is closest to the sticky navigation.
+    const chosen = visible.reduce((best, section) => {
+      const rect = section.getBoundingClientRect();
+      const bestRect = best.getBoundingClientRect();
+      return Math.abs(rect.top - 74) < Math.abs(bestRect.top - 74) ? section : best;
+    });
+    setActive(chosen.id);
+  }, {
+    root: null,
+    rootMargin: '-74px 0px -52% 0px',
+    threshold: [0, 0.02, 0.1]
+  });
+
+  sections.forEach(section => io.observe(section));
+
+  // Clicking a nav item immediately highlights the destination while smooth scrolling.
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(){
+      setActive(this.dataset.navTarget);
+    });
+  });
+
+  // Keep the navigation state sensible near the very top of the page.
+  if (window.scrollY < 120) navLinks.forEach(link => link.classList.remove('active'));
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < 120) {
+      navLinks.forEach(link => { link.classList.remove('active'); link.removeAttribute('aria-current'); });
+    }
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
